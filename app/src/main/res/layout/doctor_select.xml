@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_bg">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="50dp"
+        android:paddingTop="20dp">
+        <ImageButton
+            android:id="@+id/doctor_select_close"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="right"
+            android:src="@drawable/icon_pop_close"
+            android:background="@null"
+            android:nextFocusDown="@+id/doctor_select_remote"/>
+
+
+        <Button
+            android:id="@+id/doctor_select_remote"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/blue_btn"
+            android:text="远程咨询诊断"
+            android:nextFocusUp="@+id/doctor_select_close"
+            android:nextFocusDown="@+id/doctor_select_question"/>
+
+        <Button
+            android:id="@+id/doctor_select_question"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/cyan_btn"
+            android:text="留言"
+            android:nextFocusUp="@+id/doctor_select_remote"/>
+    </LinearLayout>
+
+
+
+</ScrollView>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:padding="20dp">
+
+    <!--<TextView-->
+        <!--android:id="@+id/talk_video_content"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:text="呼叫人：ssss"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_above="@+id/talk_video_operation_layout">
+
+        <SurfaceView
+            android:id="@+id/talk_video_remoteview"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <com.yuntongxun.ecsdk.voip.video.ECCaptureView
+            android:id="@+id/talk_video_localview"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/talk_video_operation_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_margin="20dp">
+        <Button
+            android:id="@+id/talk_video_release"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:background="@drawable/cyan_btn"
+            android:text="接通"
+            android:nextFocusRight="@+id/talk_video_microphone"/>
+
+        <!--<Button-->
+            <!--android:id="@+id/talk_video_microphone"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_marginLeft="30dp"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:textSize="24sp"-->
+            <!--android:background="@drawable/cyan_btn"-->
+            <!--android:text="关麦"-->
+            <!--android:nextFocusLeft="@+id/talk_video_release"-->
+            <!--android:nextFocusRight="@+id/talk_video_volume"/>-->
+
+        <Button
+            android:id="@+id/talk_video_volume"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="30dp"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:background="@drawable/cyan_btn"
+            android:text="关声"
+            android:nextFocusLeft="@+id/talk_video_microphone"/>
+    </LinearLayout>
+
+</RelativeLayout>

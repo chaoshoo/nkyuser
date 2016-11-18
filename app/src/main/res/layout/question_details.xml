@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5">
+
+                <include layout="@layout/doctor_details"/>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/question_details_date0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="提交时间：--/--"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/gray"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/icon_edit_title"
+                        android:scaleType="fitXY"/>
+                    <TextView
+                        android:id="@+id/question_details_content0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="24sp"
+                        android:text="无"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/question_details_date1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"
+                    android:text="回复时间：--/--"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/gray"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/icon_edit_title"
+                        android:scaleType="fitXY"/>
+                    <TextView
+                        android:id="@+id/question_details_content1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="24sp"
+                        android:text="无"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp">
+
+                    <ImageButton
+                        android:id="@+id/question_details_up"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@null"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/question_details_up"
+                        android:nextFocusRight="@+id/question_save_next"/>
+                    <ImageButton
+                        android:id="@+id/question_details_next"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="20dp"
+                        android:scaleType="fitXY"
+                        android:background="@null"
+                        android:src="@drawable/question_details_next"
+                        android:nextFocusLeft="@+id/question_details_up"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/white_bg">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/icon_note"
+                            android:scaleType="fitXY"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"/>
+                        <EditText
+                            android:id="@+id/question_details_add"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:background="@null"
+                            android:textSize="20sp"
+                            android:hint="追加评论"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="bottom|right">
+                        <Button
+                            android:id="@+id/question_details_confirm"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:textColor="@android:color/white"
+                            android:background="@drawable/blue_btn"
+                            android:text="确定"
+                            android:textSize="24sp"
+                            android:nextFocusUp="@+id/question_save_content"
+                            android:nextFocusRight="@+id/question_save_cancel"/>
+                        <Button
+                            android:id="@+id/question_details_back"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="20dp"
+                            android:textColor="@android:color/white"
+                            android:background="@drawable/cyan_btn"
+                            android:text="返回"
+                            android:textSize="24sp"
+                            android:nextFocusUp="@+id/question_save_content"
+                            android:nextFocusLeft="@+id/question_save_confirm"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</ScrollView>

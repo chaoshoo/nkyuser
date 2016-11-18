@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_bg"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
+    android:paddingBottom="50dp"
+    android:paddingTop="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="22sp"
+        android:text="请选择此次血糖的测量类型"/>
+
+    <Button
+        android:id="@+id/pop_xuetang_glu0"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/cyan_btn"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:text="随机血糖"
+        android:nextFocusDown="@+id/pop_xuetang_glu1"/>
+
+    <Button
+        android:id="@+id/pop_xuetang_glu1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/cyan_btn"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:text="餐前血糖"
+        android:nextFocusUp="@+id/pop_xuetang_glu0"
+        android:nextFocusDown="@+id/pop_xuetang_glu2"/>
+
+    <Button
+        android:id="@+id/pop_xuetang_glu2"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/cyan_btn"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:text="餐后血糖"
+        android:nextFocusUp="@+id/pop_xuetang_glu1"/>
+
+
+
+</LinearLayout>

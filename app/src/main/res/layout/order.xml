@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/title_size"
+        android:textColor="@android:color/white"
+        android:text="订单列表"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/order_up"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="上一页"
+            android:textColor="#0072b9"
+            android:textSize="@dimen/btn_size"
+            android:background="@drawable/white_btn"
+            android:nextFocusRight="@+id/order_next"/>
+        <Button
+            android:id="@+id/order_next"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:text="下一页"
+            android:textColor="#0072b9"
+            android:textSize="@dimen/btn_size"
+            android:background="@drawable/white_btn"
+            android:nextFocusLeft="@+id/order_up"
+            android:nextFocusRight="@+id/order_back"/>
+        <Button
+            android:id="@+id/order_back"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:text="返回"
+            android:textColor="#0072b9"
+            android:textSize="@dimen/btn_size"
+            android:background="@drawable/white_btn"
+            android:nextFocusLeft="@+id/order_next"/>
+    </LinearLayout>
+
+    <com.open.androidtvwidget.leanback.recycle.RecyclerViewTV
+        android:id="@+id/order_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:focusable="false"/>
+
+    <com.open.androidtvwidget.view.MainUpView
+        android:id="@+id/order_upview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

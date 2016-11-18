@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="50dp">
+
+    <Button
+        android:id="@+id/setting_version_back"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/item"
+        android:gravity="center"
+        android:text="返回"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:nextFocusDown="@+id/setting_current_version"/>
+
+    <Button
+        android:id="@+id/setting_version_update"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/item"
+        android:gravity="center"
+        android:text="检测更新"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:nextFocusDown="@+id/setting_current_version"/>
+
+    <Button
+        android:id="@+id/setting_current_version"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/item"
+        android:gravity="center"
+        android:text="当前版本号"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:nextFocusDown="@+id/setting_exit"
+        android:nextFocusUp="@+id/setting_version_update"/>
+
+    <Button
+        android:id="@+id/setting_exit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/item"
+        android:gravity="center"
+        android:text="退出当前账号"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:nextFocusUp="@+id/setting_current_version"/>
+
+    <com.open.androidtvwidget.view.MainUpView
+        android:id="@+id/setting_mainupview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

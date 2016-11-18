@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:layout_margin="20dp"
+    android:background="@drawable/item"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+
+    <TextView
+        android:id="@+id/message_item_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:text="奥巴马说"/>
+
+    <TextView
+        android:id="@+id/message_item_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:textSize="14sp"
+        android:textColor="@android:color/white"
+        android:text="  看电视看积分换大酒店好东东还发生过就是掉个喀什市的说法是绝大多数就打电话梵蒂冈符合规范"/>
+
+    <TextView
+        android:id="@+id/message_item_time"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:text="2016/08/23"/>
+
+
+
+</LinearLayout>

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_above="@+id/main_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:background="@drawable/main_check_result">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:orientation="horizontal">
+                <FrameLayout
+                    android:id="@+id/main_detection_kpi_content"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    >
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    >
+                    <ImageView
+                        android:id="@+id/main_status"
+                        android:layout_gravity="center"
+                        android:layout_width="180dp"
+                        android:layout_height="180dp"
+                        android:scaleType="fitXY"/>
+                </FrameLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/main_reference"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:textColor="@android:color/white"
+                android:text="参考阈值"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:background="@drawable/main_last_info"
+                android:gravity="center">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2">
+
+                    <ImageView
+                        android:id="@+id/main_user_protrait"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/icon_user"/>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:paddingLeft="3dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/main_check_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="和贝贝"
+                        android:textColor="@android:color/black"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/main_check_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="24sp"
+                            android:textColor="@android:color/black"
+                            android:text="血压"
+                            />
+                        <TextView
+                            android:id="@+id/main_check_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:textSize="34sp"
+                            android:textColor="@android:color/black"
+                            android:text="189/76"
+                            />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/main_check_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textSize="18sp"
+                        android:textColor="@android:color/black"
+                        android:text="最近一次检测时间:2016-08-07"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:id="@+id/main_registration_info_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="horizontal"
+                    android:background="@drawable/main_registration_info"
+                    android:padding="5dp"
+                    android:focusable="true"
+                    android:nextFocusDown="@+id/main_setting">
+
+                    <ImageView
+                        android:id="@+id/main_no_reg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/no_reg"/>
+
+                    <TextView
+                        android:id="@+id/main_registration_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:textSize="18sp"
+                        android:textColor="@android:color/white"
+                        android:text="暂无挂号信息"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/main_erweima"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="fitXY"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/main_erweima"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:focusable="true">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/main_remote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:src="@drawable/main_remote"
+                android:scaleType="fitXY"
+                android:nextFocusLeft="@+id/main_guide"
+                android:nextFocusRight="@+id/main_registration"
+                android:nextFocusUp="@+id/main_registration_info_layout"
+                android:focusable="true"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/main_registration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:scaleType="fitXY"
+                android:src="@drawable/main_registration"
+                android:nextFocusUp="@+id/main_registration_info_layout"
+                android:focusable="true"
+                android:nextFocusLeft="@+id/main_remote"
+                android:nextFocusRight="@+id/main_my"/>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/main_my"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:nextFocusLeft="@+id/main_registration"
+                android:nextFocusRight="@+id/main_children"
+                android:nextFocusUp="@+id/main_registration_info_layout"
+                android:scaleType="fitXY"
+                android:src="@drawable/main_my"
+                android:focusable="true"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/main_children"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:nextFocusLeft="@+id/main_my"
+                android:nextFocusRight="@+id/main_message"
+                android:nextFocusUp="@+id/main_registration_info_layout"
+                android:scaleType="fitXY"
+                android:src="@drawable/main_children"
+                android:focusable="true"/>
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/main_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:nextFocusLeft="@+id/main_children"
+                android:nextFocusRight="@+id/main_history"
+                android:nextFocusUp="@+id/main_registration_info_layout"
+                android:scaleType="fitXY"
+                android:src="@drawable/main_message"
+                android:focusable="true"/>
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/main_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:nextFocusLeft="@+id/main_message"
+                android:nextFocusRight="@+id/main_setting"
+                android:nextFocusUp="@+id/main_registration_info_layout"
+                android:scaleType="fitXY"
+                android:src="@drawable/main_history"
+                android:focusable="true"/>
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/main_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:nextFocusLeft="@+id/main_history"
+                android:nextFocusRight="@+id/main_guide"
+                android:nextFocusUp="@+id/main_registration_info_layout"
+                android:scaleType="fitXY"
+                android:src="@drawable/main_setting"
+                android:focusable="true"/>
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/main_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:nextFocusLeft="@+id/main_setting"
+                android:nextFocusRight="@+id/main_remote"
+                android:nextFocusUp="@+id/main_registration_info_layout"
+                android:scaleType="fitXY"
+                android:src="@drawable/main_guide"
+                android:focusable="true"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <com.open.androidtvwidget.view.MainUpView
+        android:id="@+id/main_upview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

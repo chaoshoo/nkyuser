@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_bg"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp">
+
+    <ImageButton
+        android:id="@+id/pop_locknum_success_close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/icon_pop_close"
+        android:background="@null"
+        android:layout_gravity="right"/>
+
+    <TextView
+        android:id="@+id/pop_locknum_success_orderid"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:text="订单编号："/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/pop_locknum_success_money"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:text="订单金额："/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/pop_locknum_success_ordertime"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:text="锁号时间："/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"/>
+
+    <Button
+        android:id="@+id/pop_locknum_success_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="@dimen/btn_size"
+        android:textColor="@android:color/white"
+        android:text="确定"
+        android:background="@drawable/blue_btn"/>
+</LinearLayout>

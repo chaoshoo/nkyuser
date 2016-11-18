@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="留言"
+        android:textColor="@android:color/white"
+        android:textSize="34sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/question_history_up"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@drawable/white_btn"
+            android:nextFocusRight="@+id/question_history_next"
+            android:text="上一页"
+            android:textColor="#0072b9"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/question_history_next"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/white_btn"
+            android:nextFocusLeft="@+id/question_history_up"
+            android:nextFocusRight="@+id/question_history_back"
+            android:text="下一页"
+            android:textColor="#0072b9"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/question_history_back"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/white_btn"
+            android:nextFocusLeft="@+id/question_history_next"
+            android:text="返回"
+            android:textColor="#0072b9"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <com.open.androidtvwidget.leanback.recycle.RecyclerViewTV
+        android:id="@+id/question_history_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:focusable="false"/>
+
+    <com.open.androidtvwidget.view.MainUpView
+        android:id="@+id/question_history_upview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

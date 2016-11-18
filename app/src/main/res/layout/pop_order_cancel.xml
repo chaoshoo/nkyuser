@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_bg"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp">
+
+    <ImageButton
+        android:id="@+id/pop_order_cancel_close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/icon_pop_close"
+        android:background="@null"
+        android:layout_gravity="right"
+        android:nextFocusDown="@+id/pop_order_cancel_reason"/>
+
+    <EditText
+        android:id="@+id/pop_order_cancel_reason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input_black_border"
+        android:nextFocusUp="@+id/pop_order_cancel_close"
+        android:nextFocusDown="@+id/pop_order_cancel_confirm"
+        android:textSize="24sp"
+        android:hint="请输入取消原因"/>
+
+    <Button
+        android:id="@+id/pop_order_cancel_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/blue_btn"
+        android:textColor="@android:color/white"
+        android:text="确定"
+        android:textSize="24sp"
+        android:nextFocusUp="@+id/pop_order_cancel_reason"/>
+</LinearLayout>

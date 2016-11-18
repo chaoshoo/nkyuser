@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/pop_order_operation_close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/icon_pop_close"
+            android:background="@null"
+            android:layout_gravity="right"
+            android:nextFocusDown="@+id/pop_order_cancel_reason"/>
+
+        <TextView
+            android:id="@+id/pop_order_operation_orderid"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:text="订单编号："/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/pop_order_operation_money"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:text="订单金额："/>
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="@android:color/black"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/pop_order_operation_ordertime"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:textSize="24sp"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:text="锁号时间："/>-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/pop_order_operation_paystatus"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:text="支付状态："/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/pop_order_operation_yes"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginRight="20dp"
+                android:textSize="24sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/blue_btn"
+                android:text="确认订单"
+                android:nextFocusUp="@+id/pop_order_operation_close"
+                android:nextFocusRight="@+id/pop_order_operation_cancel"/>
+
+            <Button
+                android:id="@+id/pop_order_operation_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/cyan_btn"
+                android:text="取消订单"
+                android:nextFocusUp="@+id/pop_order_operation_close"
+                android:nextFocusLeft="@+id/pop_order_operation_yes"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

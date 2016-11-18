@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_bg"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp">
+
+    <TextView
+        android:id="@+id/pw_message_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:textSize="@dimen/title_size"
+        android:text="我是标题"/>
+
+
+    <TextView
+        android:id="@+id/pw_message_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:minHeight="180dp"
+        android:textSize="@dimen/text_size"
+        android:text="  我是内容"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp">
+        <Button
+            android:id="@+id/pw_message_confirm"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/blue_btn"
+            android:textSize="@dimen/btn_size"
+            android:textColor="@android:color/white"
+            android:text="确定"
+            android:nextFocusRight="@+id/pw_message_cancel"/>
+        <Button
+            android:id="@+id/pw_message_cancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/cyan_btn"
+            android:textSize="@dimen/btn_size"
+            android:textColor="@android:color/white"
+            android:text="取消"
+            android:nextFocusLeft="@+id/pw_message_confirm"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

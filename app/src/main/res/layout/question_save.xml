@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5">
+
+                <include layout="@layout/doctor_details"/>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/input_no_border"
+                    android:orientation="horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/icon_edit_title"
+                        android:scaleType="fitXY"/>
+
+                    <EditText
+                        android:id="@+id/question_save_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="请输入标题"
+                        android:textSize="28sp"
+                        android:nextFocusDown="@+id/question_save_content"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/input_no_border"
+                    android:orientation="horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/icon_note"
+                        android:scaleType="fitXY"/>
+
+                    <EditText
+                        android:id="@+id/question_save_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@null"
+                        android:hint="你想说点什么"
+                        android:textSize="26sp"
+                        android:nextFocusDown="@+id/question_save_confirm"
+                        android:nextFocusUp="@+id/question_save_title"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="right|bottom">
+
+                    <Button
+                        android:id="@+id/question_save_confirm"
+                        android:layout_width="150dp"
+                        android:layout_height="60dp"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/blue_btn"
+                        android:text="确定"
+                        android:textSize="28sp"
+                        android:nextFocusUp="@+id/question_save_content"
+                        android:nextFocusRight="@+id/question_save_cancel"/>
+                    <Button
+                        android:id="@+id/question_save_cancel"
+                        android:layout_width="150dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/cyan_btn"
+                        android:text="取消"
+                        android:textSize="28sp"
+                        android:nextFocusUp="@+id/question_save_content"
+                        android:nextFocusLeft="@+id/question_save_confirm"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</ScrollView>

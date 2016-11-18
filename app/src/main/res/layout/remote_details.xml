@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5">
+
+                <include layout="@layout/doctor_details"/>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/input_no_border"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:text="预约时间："/>
+
+                    <TextView
+                        android:id="@+id/remote_details_order_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="22sp"
+                        android:hint="2016/08/26 17:00:00"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/remote_details_iszd_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/input_no_border"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:text="是否应诊："/>
+
+                    <TextView
+                        android:id="@+id/remote_details_iszd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="22sp"
+                        android:text="是"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/remote_details_begin_time_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/input_no_border"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:text="应诊时间："/>
+
+                    <TextView
+                        android:id="@+id/remote_details_begin_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="22sp"
+                        android:hint="2016/08/26 17:00:00"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/remote_details_isDeal_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/input_no_border"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:text="是否处理："/>
+
+                    <TextView
+                        android:id="@+id/remote_details_isDeal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="22sp"
+                        android:text="是"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/remote_details_end_time_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/input_no_border"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:text="处理时间："/>
+
+                    <TextView
+                        android:id="@+id/remote_details_end_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="22sp"
+                        android:hint="2016/08/26 17:00:00"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/remote_details_remark_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/input_no_border"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:text="备注："/>
+
+                    <TextView
+                        android:id="@+id/remote_details_remark"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
+                        android:layout_marginLeft="5dp"
+                        android:hint="大华股份会更好的高房价和低功耗分"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/remote_details_evaluate_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:text="评价"/>
+                    <RatingBar
+                        android:id="@+id/remote_details_evaluate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:numStars="5"
+                        android:focusable="false"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="right|bottom">
+
+                    <Button
+                        android:id="@+id/remote_details_cancel"
+                        android:layout_width="160dp"
+                        android:layout_height="60dp"
+                        android:textSize="24dp"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/blue_btn"
+                        android:nextFocusRight="@+id/remote_details_back"
+                        android:text="取消预约"/>
+                    <Button
+                        android:id="@+id/remote_details_back"
+                        android:layout_width="160dp"
+                        android:layout_height="60dp"
+                        android:textSize="24dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/cyan_btn"
+                        android:nextFocusLeft="@+id/remote_details_cancel"
+                        android:text="返回"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</ScrollView>
