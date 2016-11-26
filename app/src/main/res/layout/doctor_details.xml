@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="章撒啊"
+                android:text="Zhangsaa"
                 android:textSize="30sp"/>
             <TextView
                 android:id="@+id/doctor_details_job"
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:textColor="@android:color/white"
-                android:text="心血科"
+                android:text="Heart blood section"
                 android:textSize="28sp"/>
             <TextView
                 android:id="@+id/doctor_details_edu"
@@ -47,7 +47,7 @@
                 android:singleLine="true"
                 android:ellipsize="end"
                 android:textColor="@android:color/white"
-                android:text="华中科技大学是滴的反病毒"
+                android:text="Huazhong University of Science and Technology is a drop of anti virus"
                 android:textSize="24sp"/>
         </LinearLayout>
     </LinearLayout>
@@ -59,6 +59,6 @@
         android:layout_marginTop="10dp"
         android:lineSpacingMultiplier="1.5"
         android:textSize="20sp"
-        android:text="  地方的对话框是极好的看时间段是和会计师的很快就到上课地方vsjshdghsdgjsgdhsgdjhsgdjhsdg聚划算高房价和施工方及核事故发几首歌就"
+        android:text="  The dialog box is an excellent time to see the time and the accountant is very quick to go to class.vsjshdghsdgjsgdhsgdjhsgdjhsdgJuhuasuan high prices and construction side and the nuclear accident made a few songs on the"
         android:textColor="@android:color/white"/>
 </LinearLayout>

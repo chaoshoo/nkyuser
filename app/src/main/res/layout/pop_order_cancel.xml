@@ -27,7 +27,7 @@
         android:nextFocusUp="@+id/pop_order_cancel_close"
         android:nextFocusDown="@+id/pop_order_cancel_confirm"
         android:textSize="24sp"
-        android:hint="请输入取消原因"/>
+        android:hint="Please enter the reason for cancellation"/>
 
     <Button
         android:id="@+id/pop_order_cancel_confirm"
@@ -37,7 +37,7 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/blue_btn"
         android:textColor="@android:color/white"
-        android:text="确定"
+        android:text="Confirmed"
         android:textSize="24sp"
         android:nextFocusUp="@+id/pop_order_cancel_reason"/>
 </LinearLayout>

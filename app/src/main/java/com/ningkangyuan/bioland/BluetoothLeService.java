@@ -74,14 +74,14 @@ public class BluetoothLeService extends Service {
 				int newState) {
 			String intentAction;
 			if (newState == BluetoothProfile.STATE_CONNECTED) {
-				Log.e(TAG, "78成功");
+				Log.e(TAG, "78chenggong");
 				mBluetoothGatt.discoverServices();
 				intentAction = ACTION_GATT_CONNECTED;
 				mConnectionState = STATE_CONNECTED;
 				broadcastUpdate(intentAction);
 
 			} else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
-				Log.e(TAG, "83失败");
+				Log.e(TAG, "83fail");
 				intentAction = ACTION_GATT_DISCONNECTED;
 				mConnectionState = STATE_DISCONNECTED;
 				broadcastUpdate(intentAction);

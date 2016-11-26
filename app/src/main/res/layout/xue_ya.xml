@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="连接状态"
+            android:text="Connection status"
             android:textSize="18sp" />
 
         <Space
@@ -39,7 +39,7 @@
             android:id="@+id/connection_state"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="正在连接血压设备.."
+            android:text="Connecting blood pressure equipment.."
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -57,7 +57,7 @@
             android:background="@drawable/blue_btn"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-            android:text="开始测量"
+            android:text="Start measuring"
             android:nextFocusRight="@+id/xue_ya_back"/>
         <Button
             android:id="@+id/xue_ya_back"
@@ -67,7 +67,7 @@
             android:background="@drawable/blue_btn"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-            android:text="返回"
+            android:text="Return"
             android:nextFocusLeft="@+id/xue_ya_start"/>
     </LinearLayout>
 

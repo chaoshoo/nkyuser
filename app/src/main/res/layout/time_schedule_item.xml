@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:textSize="26sp"
         android:textColor="@android:color/white"
-        android:text="开始时间："/>
+        android:text="start time："/>
 
     <TextView
         android:id="@+id/time_schedule_item_etime"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:textSize="26sp"
         android:textColor="@android:color/white"
-        android:text="结束时间："/>
+        android:text="End time："/>
 
     <TextView
         android:id="@+id/time_schedule_item_flag"
@@ -35,6 +35,6 @@
         android:layout_gravity="right"
         android:textSize="30sp"
         android:textColor="@android:color/white"
-        android:text="点击挂号"/>
+        android:text="Click to registr"/>
 
 </LinearLayout>

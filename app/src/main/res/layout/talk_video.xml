@@ -13,7 +13,7 @@
         <!--android:layout_marginTop="20dp"-->
         <!--android:textSize="20sp"-->
         <!--android:textColor="@android:color/white"-->
-        <!--android:text="呼叫人：ssss"/>-->
+        <!--android:text="Caller：ssss"/>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
             android:textColor="@android:color/white"
             android:textSize="24sp"
             android:background="@drawable/cyan_btn"
-            android:text="接通"
+            android:text="Connect"
             android:nextFocusRight="@+id/talk_video_microphone"/>
 
         <!--<Button-->
@@ -63,7 +63,7 @@
             <!--android:textColor="@android:color/white"-->
             <!--android:textSize="24sp"-->
             <!--android:background="@drawable/cyan_btn"-->
-            <!--android:text="关麦"-->
+            <!--android:text="Voice off"-->
             <!--android:nextFocusLeft="@+id/talk_video_release"-->
             <!--android:nextFocusRight="@+id/talk_video_volume"/>-->
 
@@ -76,7 +76,7 @@
             android:textColor="@android:color/white"
             android:textSize="24sp"
             android:background="@drawable/cyan_btn"
-            android:text="关声"
+            android:text="Mute"
             android:nextFocusLeft="@+id/talk_video_microphone"/>
     </LinearLayout>
 

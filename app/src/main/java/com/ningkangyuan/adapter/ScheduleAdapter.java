@@ -36,23 +36,23 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
         holder.mOrderFeeTV.setText("¥ " + schedule.getOrderfee());
         String validFlag = schedule.getValidflag();
         String hitStr = "";
-        String flagStr = "不可挂号";
+        String flagStr = "Can not be registered";
         if ("1".equals(validFlag)) {
-            hitStr = "可挂（医院正式确定的排班表）";
-            flagStr = "点击挂号";
+            hitStr = "Available（The hospital officially confirmed the scheduling table）";
+            flagStr = "Click to registr";
         } else if ("2".equals(validFlag)) {
-            hitStr = "已满（已经全部挂满）";
+            hitStr = "Fully booked（Registrations fully booked）";
         } else if ("3".equals(validFlag)) {
-            hitStr = "停诊（医生停诊，停止预约，对已预约的号进行停诊正理）";
+            hitStr = "close（医生close，Reservation service stopped，对已预约的号进行close正理）";
         } else if ("4".equals(validFlag)) {
-            hitStr = "可约（医院没有正式确定排班，只是根据惯例生成的排班";
+            hitStr = "Available（The hospital did not officially confirmed the scheduling，Just according to the practice production scheduling";
         } else if ("5".equals(validFlag)) {
-            hitStr = "过期（已经过预约时间的排班）";
+            hitStr = "Expired（Appointment expired）";
         } else if ("6".equals(validFlag)) {
-            hitStr = "未开（还没到允许预约时间的排班）";
+            hitStr = "No（Not to allow the appointment time schedule）";
         } else if ("7".equals(validFlag)) {
-            hitStr = "分时（可挂/可约并且有分时";
-            flagStr = "点击挂号";
+            hitStr = "Time（Available/可约并且有Time";
+            flagStr = "Click to registr";
         }
         holder.mHintTV.setText(hitStr);
         holder.mFlagTV.setText(flagStr);

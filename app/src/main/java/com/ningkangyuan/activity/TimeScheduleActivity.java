@@ -83,7 +83,7 @@ public class TimeScheduleActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.time_schedule, null));
 
         mUpBtn = (Button) findViewById(R.id.time_schedule_up);
@@ -132,7 +132,7 @@ public class TimeScheduleActivity extends BaseActivity implements View.OnClickLi
                     showLockNum();
                     return;
                 }
-                ToastUtil.show(TimeScheduleActivity.this, "暂时不可挂号");
+                ToastUtil.show(TimeScheduleActivity.this, "Temporarily not registere");
             }
         });
 
@@ -159,7 +159,7 @@ public class TimeScheduleActivity extends BaseActivity implements View.OnClickLi
             case R.id.time_schedule_up:
                 //上一页
                 if (mPage == 0) {
-                    ToastUtil.show(this,"已经是第一页了");
+                    ToastUtil.show(this,"First page.");
                     return;
                 }
                 qryTimeSchedule(mPage, "-");
@@ -167,7 +167,7 @@ public class TimeScheduleActivity extends BaseActivity implements View.OnClickLi
             case R.id.time_schedule_next:
                 //下一页
                 if (isLastPage) {
-                    ToastUtil.show(this,"已经是最后一页了");
+                    ToastUtil.show(this,"Last page.");
                     return;
                 }
                 qryTimeSchedule(mPage, "+");
@@ -187,7 +187,7 @@ public class TimeScheduleActivity extends BaseActivity implements View.OnClickLi
     }
 
     private void qryTimeSchedule(int page, final String type) {
-        showProgressDialog("正在查询数据");
+        showProgressDialog("Querying data");
         if ("+".equals(type)) {
             page ++;
         } else if ("-".equals(type)) {
@@ -204,7 +204,7 @@ public class TimeScheduleActivity extends BaseActivity implements View.OnClickLi
                         dismissProgressDialog();
                         String msg = e.getMessage();
                         if (msg.startsWith("Failed"))  {
-                            msg = "无法连接服务器，请检查网络";
+                            msg = "Unable to connect to the server，Please check the network";
                         }
                         ToastUtil.show(TimeScheduleActivity.this, msg);
                     }
@@ -246,7 +246,7 @@ public class TimeScheduleActivity extends BaseActivity implements View.OnClickLi
                         @Override
                         public void run() {
                             dismissProgressDialog();
-                            ToastUtil.show(TimeScheduleActivity.this, "暂无分时排班数据");
+                            ToastUtil.show(TimeScheduleActivity.this, "No time scheduling data");
                         }
                     });
                 }
@@ -255,7 +255,7 @@ public class TimeScheduleActivity extends BaseActivity implements View.OnClickLi
     }
 
     private void locakNum() {
-        showProgressDialog("正在锁定号源");
+        showProgressDialog("Lock signal source");
         mCallList.add(OkHttpHelper.get(OkHttpHelper.makeJsonParams("ghlock",
                 new String[]{"hosid","vipcode","docid","outpdate","deptid","scheduleid","partscheduleid",
                         "certtypeno","idcard","patientname","patientsex","patientbirthday","contactphone","familyaddress"},
@@ -286,11 +286,11 @@ public class TimeScheduleActivity extends BaseActivity implements View.OnClickLi
                         dismissProgressDialog();
                         if ("0".equals(ret)) {
                             MyApplication.isRefreshMain = true;
-                            ToastUtil.show(TimeScheduleActivity.this, "锁号成功,可在 个人中心-挂号 进行查看");
+                            ToastUtil.show(TimeScheduleActivity.this, "Locked success,In Personal Center-Register To view");
                             showLockNumSuccess(message);
                             return;
                         }
-                        ToastUtil.show(TimeScheduleActivity.this, "锁号失败，" + msg);
+                        ToastUtil.show(TimeScheduleActivity.this, "Locked number failed，" + msg);
                     }
                 });
             }
@@ -300,14 +300,14 @@ public class TimeScheduleActivity extends BaseActivity implements View.OnClickLi
     private void showLockNum() {
         if (mLockDialog == null) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("确定锁定此号源吗？");
-            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            builder.setTitle("Sure to lock this registeration source?？");
+            builder.setPositiveButton("Confirmed", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     locakNum();
                 }
             });
-            builder.setNegativeButton("取消", null);
+            builder.setNegativeButton("cancel", null);
 
             mLockDialog = builder.create();
         }
@@ -335,15 +335,15 @@ public class TimeScheduleActivity extends BaseActivity implements View.OnClickLi
         }
 
         mOrderId = JsonUtil.getObjectByKey("orderid",orderStr);
-        mOrderIdTV.setText("订单编号：" + mOrderId);
-        mOrderFeeTV.setText("挂号费用：" + JsonUtil.getObjectByKey("orderfee",orderStr) + "元");
-        mLockNumTimeTV.setText("挂号时间：" + mSimpleDateFormat.format(new Date(Long.parseLong(JsonUtil.getObjectByKey("ordertime",orderStr)))));
+        mOrderIdTV.setText("Order number：" + mOrderId);
+        mOrderFeeTV.setText("Registration fee：" + JsonUtil.getObjectByKey("orderfee",orderStr) + "element");
+        mLockNumTimeTV.setText("Registration Time：" + mSimpleDateFormat.format(new Date(Long.parseLong(JsonUtil.getObjectByKey("ordertime",orderStr)))));
 
         mLockNumSuccessPop.showAtLocation(mRecyclerViewTV, Gravity.CENTER, 0, 0);
     }
 
     private void confirmOrder() {
-        showProgressDialog("正在确认订单");
+        showProgressDialog("Confirming order");
         mCallList.add(OkHttpHelper.get(OkHttpHelper.makeJsonParams("confirmorder",
                 new String[]{"orderid"},
                 new Object[]{mOrderId}), new Callback() {
@@ -352,7 +352,7 @@ public class TimeScheduleActivity extends BaseActivity implements View.OnClickLi
                 dismissProgressDialog();
                 String msg = e.getMessage();
                 if (msg.startsWith("Failed")) {
-                    msg = "无法连接服务器，请检查网络";
+                    msg = "Unable to connect to the server，Please check the network";
                 }
                 ToastUtil.show(TimeScheduleActivity.this, msg);
             }
@@ -371,9 +371,9 @@ public class TimeScheduleActivity extends BaseActivity implements View.OnClickLi
                         dismissProgressDialog();
                         if ("0".equals(ret)) {
                             mLockNumSuccessPop.dismiss();
-                            showConfirmMsg("确认成功：" + orderconfirmsms);
+                            showConfirmMsg("Confirmed：" + orderconfirmsms);
                         } else {
-                            ToastUtil.show(TimeScheduleActivity.this, "确认失败：" + msg);
+                            ToastUtil.show(TimeScheduleActivity.this, "Failed to confirm：" + msg);
                         }
                     }
                 });
@@ -385,8 +385,8 @@ public class TimeScheduleActivity extends BaseActivity implements View.OnClickLi
     private void showConfirmMsg(String msg) {
         if (mshowConfirmMsgDialog == null) {
             mshowConfirmMsgDialog = new AlertDialog.Builder(this);
-            mshowConfirmMsgDialog.setTitle("提示");
-            mshowConfirmMsgDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            mshowConfirmMsgDialog.setTitle("Prompt");
+            mshowConfirmMsgDialog.setPositiveButton("Confirmed", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();

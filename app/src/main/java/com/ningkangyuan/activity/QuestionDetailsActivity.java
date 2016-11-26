@@ -60,7 +60,7 @@ public class QuestionDetailsActivity extends BaseActivity implements View.OnClic
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.question_details, null));
 
         mProtraitIV = (ImageView) findViewById(R.id.doctor_details_protrait);
@@ -81,7 +81,7 @@ public class QuestionDetailsActivity extends BaseActivity implements View.OnClic
         findViewById(R.id.question_details_back).setOnClickListener(this);
 
         mQuestion = (QuestionHistory) getIntent().getSerializableExtra("question");
-        mDate0TV.setText("提交时间：" + mQuestion.getCreate_time());
+        mDate0TV.setText("Submit time：" + mQuestion.getCreate_time());
         mContent0TV.setText("  " + mQuestion.getContent());
         getDoctorInfo();
         getQuestionLog();
@@ -122,31 +122,31 @@ public class QuestionDetailsActivity extends BaseActivity implements View.OnClic
     private int count = 0;
     private void showData(String type) {
         if (mQuestionLogs.isEmpty()) {
-            ToastUtil.show(this,"暂无消息");
+            ToastUtil.show(this,"No news");
             return;
         }
         if ("+".equals(type)) {
             if (count == (mQuestionLogs.size() - 1)) {
-                ToastUtil.show(this,"已经是最后一条了");
+                ToastUtil.show(this,"Last item");
                 return;
             }
             count ++;
         } else if ("-".equals(type)) {
             if (count == 0) {
-                ToastUtil.show(this,"已经是第一条了");
+                ToastUtil.show(this,"First item");
                 return;
             }
             count --;
         }
 
         QuestionLog questionLog = mQuestionLogs.get(count);
-        mDate1TV.setText("回复时间：" + questionLog.getCreate_time());
+        mDate1TV.setText("Reply time：" + questionLog.getCreate_time());
         mContent1TV.setText("  " + questionLog.getAnswer_content());
 
     }
 
     private void getDoctorInfo() {
-        showProgressDialog("正在获取医生信息..");
+        showProgressDialog("Retrieving doctor information..");
         mCallList.add(OkHttpHelper.get(OkHttpHelper.makeJsonParams("doctors",
                 new String[]{"code","name","pageIndex","pageSize","office_code","hospital_code"},
                 new Object[]{mQuestion.getDoctor_code(),"","1","5","",""}), new Callback() {
@@ -173,7 +173,7 @@ public class QuestionDetailsActivity extends BaseActivity implements View.OnClic
                         public void run() {
                             dismissProgressDialog();
                             if (tempList.isEmpty()) {
-                                ToastUtil.show(QuestionDetailsActivity.this, "暂无医生信息");
+                                ToastUtil.show(QuestionDetailsActivity.this, "No doctor information");
                                 return;
                             }
                             mDoctor = tempList.get(0);
@@ -185,7 +185,7 @@ public class QuestionDetailsActivity extends BaseActivity implements View.OnClic
                         @Override
                         public void run() {
                             dismissProgressDialog();
-                            ToastUtil.show(QuestionDetailsActivity.this, "暂无医生信息");
+                            ToastUtil.show(QuestionDetailsActivity.this, "No doctor information");
                         }
                     });
                 }
@@ -241,10 +241,10 @@ public class QuestionDetailsActivity extends BaseActivity implements View.OnClic
     private void add() {
         String addStr = mAddET.getText().toString().trim();
         if (TextUtils.isEmpty(addStr)) {
-            ToastUtil.show(QuestionDetailsActivity.this, "请输入追加内容");
+            ToastUtil.show(QuestionDetailsActivity.this, "Please enter an additional content");
             return;
         }
-        showProgressDialog("正在提交..");
+        showProgressDialog("Submitting..");
         mCallList.add(OkHttpHelper.get(
                 OkHttpHelper.makeJsonParams("questionlogsave",
                         new String[]{"answer_code","vip_questions_id","answer_content"},

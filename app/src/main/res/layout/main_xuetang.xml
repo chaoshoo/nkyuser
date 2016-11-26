@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:textSize="50sp"
             android:textColor="@android:color/white"
-            android:text="血糖"/>
+            android:text="blood sugar"/>
         <TextView
             android:id="@+id/main_xuetang_value"
             android:layout_width="wrap_content"
@@ -35,6 +35,6 @@
         <!--android:layout_marginTop="20dp"-->
         <!--android:textSize="18sp"-->
         <!--android:textColor="@android:color/black"-->
-        <!--android:text="参考区间值     80 —— 120"/>-->
+        <!--android:text="Reference interval     80 —— 120"/>-->
 
 </LinearLayout>

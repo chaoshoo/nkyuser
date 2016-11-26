@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="40sp"
                 android:textColor="@android:color/white"
-                android:text="高压"/>
+                android:text="high pressure"/>
             <TextView
                 android:id="@+id/main_xueya_highpress"
                 android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="40sp"
                 android:textColor="@android:color/white"
-                android:text="低压"/>
+                android:text="low pressure"/>
             <TextView
                 android:id="@+id/main_xueya_lowpress"
                 android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="40sp"
                 android:textColor="@android:color/white"
-                android:text="脉率"/>
+                android:text="Pulse rate"/>
             <TextView
                 android:id="@+id/main_xueya_pulserate"
                 android:layout_width="wrap_content"

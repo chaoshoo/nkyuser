@@ -61,7 +61,7 @@ public class MessageListActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.message, null));
 
         mUpBtn = (Button) findViewById(R.id.message_up);
@@ -128,19 +128,19 @@ public class MessageListActivity extends BaseActivity implements View.OnClickLis
             case R.id.message_up:
                 //上一页
                 if (mPage == 1) {
-                    ToastUtil.show(this,"已经是第一页了");
+                    ToastUtil.show(this,"First page.");
                     return;
                 }
-                showProgressDialog("正在查询数据..");
+                showProgressDialog("Querying data..");
                 qryMessage(mPage, "-");
                 break;
             case R.id.message_next:
                 //下一页
                 if (mIsLastPage) {
-                    ToastUtil.show(this,"已经是最后一页了");
+                    ToastUtil.show(this,"Last page.");
                     return;
                 }
-                showProgressDialog("正在查询数据..");
+                showProgressDialog("Querying data..");
                 qryMessage(mPage, "+");
                 break;
             case R.id.message_back:
@@ -157,7 +157,7 @@ public class MessageListActivity extends BaseActivity implements View.OnClickLis
         if ("-".equals(type)) {
             page --;
         }
-        showProgressDialog("加载数据中..");
+        showProgressDialog("Load data..");
         mCallList.add(OkHttpHelper.get(
                 OkHttpHelper.makeJsonParams("messagelist",new String[]{"msg_type","vip_id","pageIndex","pageSize"},
                         new Object[]{"",mVip.getId(),page, Constant.PAGE_SIZE_8}), new Callback() {
@@ -205,7 +205,7 @@ public class MessageListActivity extends BaseActivity implements View.OnClickLis
                         @Override
                         public void run() {
                             dismissProgressDialog();
-                            ToastUtil.show(MessageListActivity.this, "暂无信息数据");
+                            ToastUtil.show(MessageListActivity.this, "No information");
                         }
                     });
                 }

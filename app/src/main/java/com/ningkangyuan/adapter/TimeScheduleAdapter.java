@@ -32,13 +32,13 @@ public class TimeScheduleAdapter extends RecyclerView.Adapter<TimeScheduleAdapte
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         TimeSchedule timeSchedule = mTimeScheduleList.get(position);
-        holder.mBTimeTV.setText("开始时间：" + timeSchedule.getBstp());
-        holder.mETimeTV.setText("结束时间：" + timeSchedule.getEstp());
+        holder.mBTimeTV.setText("start time：" + timeSchedule.getBstp());
+        holder.mETimeTV.setText("End time：" + timeSchedule.getEstp());
         String regflag = timeSchedule.getRegflag();
         if ("1".equals(regflag)) {
-            regflag = "点击挂号";
+            regflag = "Click to registr";
         } else {
-            regflag = "不可挂号";
+            regflag = "Can not be registered";
         }
         holder.mFlagTV.setText(regflag);
     }

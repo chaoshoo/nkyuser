@@ -24,7 +24,7 @@
         android:gravity="center_vertical"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:text="订单编号："/>
+        android:text="Order number："/>
 
     <View
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
         android:gravity="center_vertical"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:text="订单金额："/>
+        android:text="Order amount："/>
 
     <View
         android:layout_width="match_parent"
@@ -54,7 +54,7 @@
         android:gravity="center_vertical"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:text="锁号时间："/>
+        android:text="Locked time："/>
 
     <View
         android:layout_width="match_parent"
@@ -69,6 +69,6 @@
         android:layout_marginBottom="20dp"
         android:textSize="@dimen/btn_size"
         android:textColor="@android:color/white"
-        android:text="确定"
+        android:text="Confirmed"
         android:background="@drawable/blue_btn"/>
 </LinearLayout>

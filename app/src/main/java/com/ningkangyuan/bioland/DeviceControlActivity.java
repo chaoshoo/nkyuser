@@ -240,7 +240,7 @@ public class DeviceControlActivity extends BaseActivity implements OnClickListen
 		Log.e(TAG, "227=" + notify.length);
 		if (notify[0] == 0x55) {
 			if (notify.length >= 10 && notify[1] == 0x10 && notify[2] == 0) {
-				deviceType = notify[5];// 得到机种号：血压1；血糖2；
+				deviceType = notify[5];// 得到机种号：blood pressure1；blood sugar2；
 				mHandler.postDelayed(mRunnable, 300);
 			}
 			if (deviceType == 1) {
@@ -294,7 +294,7 @@ public class DeviceControlActivity extends BaseActivity implements OnClickListen
 		commands = new Commands();
 
 		((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.gatt_services_characteristics, null));
-		((TextView)findViewById(R.id.universal_checkcard_num)).setText("检查卡号" + mVip.getCard_code());
+		((TextView)findViewById(R.id.universal_checkcard_num)).setText("Check card number" + mVip.getCard_code());
 		// Sets up UI references.
 		((TextView) findViewById(R.id.device_address)).setText(mDeviceAddress);
 //		mGattServicesList = (ExpandableListView) findViewById(R.id.gatt_services_list);
@@ -524,8 +524,8 @@ public class DeviceControlActivity extends BaseActivity implements OnClickListen
 					Log.e(TAG, "463===" + b[i]);
 				}
 
-				String resultBG = "高压：" + getShort(b, 8) + " 低：" + b[10]
-						+ " 心：" + b[11];
+				String resultBG = "high pressure：" + getShort(b, 8) + " low：" + b[10]
+						+ " heart：" + b[11];
 				displayTransformationData(resultBG);
 				uploadResult();
 			}
@@ -647,7 +647,7 @@ public class DeviceControlActivity extends BaseActivity implements OnClickListen
 	}
 
 	private void uploadResult() {
-        showProgressDialog("正在上传数据");
+        showProgressDialog("Uploading data");
         mCallList.add(OkHttpHelper.get(makeUploadParams(), new Callback() {
 			@Override
 			public void onFailure(Call call, final IOException e) {
@@ -657,7 +657,7 @@ public class DeviceControlActivity extends BaseActivity implements OnClickListen
 						dismissProgressDialog();
 						String msg = e.getMessage();
 						if (msg.startsWith("Failed")) {
-							msg = "无法连接服务器，请检查网络";
+							msg = "Unable to connect to the server，Please check the network";
 						}
 						ToastUtil.show(DeviceControlActivity.this, msg);
 					}
@@ -690,7 +690,7 @@ public class DeviceControlActivity extends BaseActivity implements OnClickListen
 							Intent intent = new Intent();
 							intent.putExtra("data", (Serializable) mResultList);
 							setResult(RESULT_OK, intent);
-							showConfirmMsg("上传成功，请关闭测量设备后点击确定退出此界面。");
+							showConfirmMsg("Upload success，Please close device and click OK to exit。");
 						}
 					});
 				} else {
@@ -699,7 +699,7 @@ public class DeviceControlActivity extends BaseActivity implements OnClickListen
 						@Override
 						public void run() {
 							dismissProgressDialog();
-							showConfirmMsg("数据上传失败：" + remark);
+							showConfirmMsg("Data upload failed：" + remark);
 						}
 					});
 				}
@@ -711,8 +711,8 @@ public class DeviceControlActivity extends BaseActivity implements OnClickListen
 	private void showConfirmMsg(String msg) {
 		if (mUploadOverHintDialog == null) {
 			mUploadOverHintDialog = new AlertDialog.Builder(this);
-			mUploadOverHintDialog.setTitle("提示");
-			mUploadOverHintDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+			mUploadOverHintDialog.setTitle("Prompt");
+			mUploadOverHintDialog.setPositiveButton("Confirmed", new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					dialog.dismiss();

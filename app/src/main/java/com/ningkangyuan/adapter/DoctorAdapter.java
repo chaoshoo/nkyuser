@@ -33,10 +33,10 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.MyViewHold
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Doctor doctor = mDoctorList.get(position);
-        holder.name.setText(doctor.getName());  //姓名
-        holder.job.setText(doctor.getTitle());  //职称
-        holder.history.setText(doctor.getEdu());    //学历
-        holder.intro.setText("  " + doctor.getInfo()); //简介
+        holder.name.setText(doctor.getName());  //Name
+        holder.job.setText(doctor.getTitle());  //Title
+        holder.history.setText(doctor.getEdu());    //Education
+        holder.intro.setText("  " + doctor.getInfo()); //Introduction
     }
 
     @Override

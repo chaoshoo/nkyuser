@@ -57,12 +57,12 @@ public class DeviceSelectAcitivity extends BaseActivity {
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.device_select, null));
 
         mAxiList  = new ArrayList<Axi>();
-        mAxiList.add(new Axi("血压","BPM", 0));
-        mAxiList.add(new Axi("血糖","BGM", 0));
+        mAxiList.add(new Axi("blood pressure","BPM", 0));
+        mAxiList.add(new Axi("blood sugar","BGM", 0));
 
         mGridView = (GridView) findViewById(R.id.device_select_list);
         mGridView.setAdapter(new DeviceSelectAdapter(this));
@@ -72,7 +72,7 @@ public class DeviceSelectAcitivity extends BaseActivity {
         mBluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
         mBluetoothAdapter = mBluetoothManager.getAdapter();
         if (mBluetoothAdapter == null) {
-            ToastUtil.show(this,"未检测到本设备的蓝牙模块");
+            ToastUtil.show(this,"Bluetooth module was not detected.");
             finish();
             return;
         }
@@ -106,7 +106,7 @@ public class DeviceSelectAcitivity extends BaseActivity {
             Integer position = (Integer) v.getTag(R.id.position);
             String name = mAxiList.get(position).getName();
             mDeviceType = mAxiList.get(position).getCode();
-            showProgressDialog("正在扫描" + name + "设备,请确保该设备已打开");
+            showProgressDialog("Scanning" + name + "equipment,请确保该equipment已打开");
             mBluetoothAdapter.startLeScan(leScanCallback);
         }
     };

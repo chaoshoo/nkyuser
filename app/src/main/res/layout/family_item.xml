@@ -23,6 +23,6 @@
         android:layout_marginTop="15dp"
         android:textColor="@android:color/white"
         android:textSize="24dp"
-        android:text="绑定成员"/>
+        android:text="Bind member"/>
 
 </LinearLayout>

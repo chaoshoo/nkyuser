@@ -58,7 +58,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.setting, null));
 
         mMainUpView = (MainUpView) findViewById(R.id.setting_mainupview);
@@ -103,7 +103,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                 PackageManager packageManager = getPackageManager();
                 try {
                     PackageInfo packageInfo = packageManager.getPackageInfo(getPackageName(),0);
-                    ToastUtil.show(this,"当前版本号为：" + packageInfo.versionName);
+                    ToastUtil.show(this,"The current version is：" + packageInfo.versionName);
                 } catch (PackageManager.NameNotFoundException e) {
                     e.printStackTrace();
                 }
@@ -130,9 +130,9 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
     private void showExitDialog() {
         if (mExitDialog == null) {
             mExitDialog = new AlertDialog.Builder(this);
-            mExitDialog.setTitle("提示");
-            mExitDialog.setMessage("是否退出当前账号？");
-            mExitDialog.setPositiveButton("是", new DialogInterface.OnClickListener() {
+            mExitDialog.setTitle("Prompt");
+            mExitDialog.setMessage("Confirm to quit the current account？");
+            mExitDialog.setPositiveButton("yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     getSharedPreferences("login",0).edit().putString("identityStr",null).commit();
@@ -143,7 +143,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                     finish();
                 }
             });
-            mExitDialog.setNegativeButton("否", null);
+            mExitDialog.setNegativeButton("no", null);
         }
         mExitDialog.show();
     }
@@ -154,11 +154,11 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
             switch (msg.what) {
                 case 1:
                     int progress = msg.arg1;
-                    ToastUtil.show(SettingActivity.this,"下载进度:" + progress + "%");
+                    ToastUtil.show(SettingActivity.this,"Download progress:" + progress + "%");
                     break;
                 case 2:
                     String apkPath = (String) msg.obj;
-                    ToastUtil.show(SettingActivity.this,"下载完成，进行安装");
+                    ToastUtil.show(SettingActivity.this,"Download completed，To install");
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setDataAndType(Uri.fromFile(new File(apkPath)),"application/vnd.android.package-archive");
                     startActivity(intent);
@@ -177,7 +177,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
             public void onFailure(Call call, IOException e) {
                 String msg = e.getMessage();
                 if (msg.startsWith("Failed")) {
-                    msg = "无法连接服务器，请检查网络";
+                    msg = "Unable to connect to the server，Please check the network";
                 }
                 ToastUtil.show(SettingActivity.this, msg);
             }
@@ -199,7 +199,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        ToastUtil.show(SettingActivity.this, "发现新版");
+                                        ToastUtil.show(SettingActivity.this, "Discover new");
                                     }
                                 });
                                 update(version_url);
@@ -207,7 +207,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        ToastUtil.show(SettingActivity.this, "当前版本是最新的");
+                                        ToastUtil.show(SettingActivity.this, "The current version is the latest");
                                     }
                                 });
                             }
@@ -218,7 +218,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                ToastUtil.show(SettingActivity.this, "当前版本是最新的");
+                                ToastUtil.show(SettingActivity.this, "The current version is the latest");
                             }
                         });
                     }
@@ -226,7 +226,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            ToastUtil.show(SettingActivity.this, "当前版本是最新的");
+                            ToastUtil.show(SettingActivity.this, "The current version is the latest");
                         }
                     });
                 }
@@ -244,7 +244,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                     public void run() {
                         String msg = e.getMessage();
                         if (msg.startsWith("Failed")) {
-                            msg = "无法连接服务器，请检查网络";
+                            msg = "Unable to connect to the server，Please check the network";
                         }
                         ToastUtil.show(SettingActivity.this, msg);
                     }

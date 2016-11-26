@@ -32,7 +32,7 @@ public class PersonalCenterActivity extends BaseActivity implements View.OnClick
     @Override
     protected void init() {
         mTextView = (TextView) findViewById(R.id.universal_checkcard_num);
-        mTextView.setText("检查卡号：" + mVip.getCard_code());
+        mTextView.setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.personal_center, null));
 
         findViewById(R.id.personal_center_remote).setOnClickListener(this);

@@ -54,7 +54,7 @@
                         android:layout_marginLeft="10dp"
                         android:background="@null"
                         android:gravity="center_vertical"
-                        android:hint="请输入标题"
+                        android:hint="Please enter a title"
                         android:textSize="28sp"
                         android:nextFocusDown="@+id/question_save_content"
                         />
@@ -79,7 +79,7 @@
                         android:layout_height="150dp"
                         android:layout_marginLeft="5dp"
                         android:background="@null"
-                        android:hint="你想说点什么"
+                        android:hint="What do you want to say"
                         android:textSize="26sp"
                         android:nextFocusDown="@+id/question_save_confirm"
                         android:nextFocusUp="@+id/question_save_title"/>
@@ -97,7 +97,7 @@
                         android:layout_height="60dp"
                         android:textColor="@android:color/white"
                         android:background="@drawable/blue_btn"
-                        android:text="确定"
+                        android:text="Confirmed"
                         android:textSize="28sp"
                         android:nextFocusUp="@+id/question_save_content"
                         android:nextFocusRight="@+id/question_save_cancel"/>
@@ -108,7 +108,7 @@
                         android:layout_marginLeft="20dp"
                         android:textColor="@android:color/white"
                         android:background="@drawable/cyan_btn"
-                        android:text="取消"
+                        android:text="cancel"
                         android:textSize="28sp"
                         android:nextFocusUp="@+id/question_save_content"
                         android:nextFocusLeft="@+id/question_save_confirm"/>

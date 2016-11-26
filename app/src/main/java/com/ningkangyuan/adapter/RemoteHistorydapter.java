@@ -32,25 +32,25 @@ public class RemoteHistorydapter extends RecyclerView.Adapter<RemoteHistorydapte
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         RemoteHistory remoteHistory = mRemoteHistoryList.get(position);
-        holder.doctor.setText("预约医生：" + remoteHistory.getName() + "\n预约时间：" + remoteHistory.getOrder_time());
-        holder.remark.setText("预约备注：\n" + remoteHistory.getRemark());
+        holder.doctor.setText("make an appointment：" + remoteHistory.getName() + "\nAppointment time：" + remoteHistory.getOrder_time());
+        holder.remark.setText("Appointment notes：\n" + remoteHistory.getRemark());
         String isZd = remoteHistory.getIszd();
         if ("1".equals(isZd)) {
-            isZd = "已应答";
+            isZd = "Answered";
         } else if ("2".equals(isZd)) {
-            isZd = "已拒绝";
+            isZd = "Refused";
         } else {
-            isZd = "未处理";
+            isZd = "Untreated";
         }
         String isDeal = remoteHistory.getIsdeal();
         if ("1".equals(isDeal)) {
-            isDeal = "已视频";
+            isDeal = "Chatted";
         } else if ("2".equals(isDeal)) {
-            isDeal = "已拒绝";
+            isDeal = "Refused";
         } else {
-            isDeal = "未处理";
+            isDeal = "Untreated";
         }
-        holder.status.setText("应诊状态：" + isZd + "\n视频状态：" + isDeal);
+        holder.status.setText("Visit status：" + isZd + "\nVideo status：" + isDeal);
     }
 
     @Override

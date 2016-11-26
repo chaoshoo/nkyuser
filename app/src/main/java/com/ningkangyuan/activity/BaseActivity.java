@@ -61,7 +61,7 @@ public class BaseActivity extends FragmentActivity implements OnPushListener {
         if (isLoadVip) {
             mVip = Shared.getInstance().getLocalVip(this);
             if (mVip == null) {
-                ToastUtil.show(this,"请先登录");
+                ToastUtil.show(this,"Please login first");
                 return;
             }
         }
@@ -158,13 +158,13 @@ public class BaseActivity extends FragmentActivity implements OnPushListener {
             titleStr = title;
             msgStr = description;
             mConfirm.setVisibility(View.GONE);
-            mCancel.setText("确定");
+            mCancel.setText("Confirmed");
             if ("vedio".equals(title)) {
                 mConfirm.setVisibility(View.VISIBLE);
-                mCancel.setText("取消");
+                mCancel.setText("cancel");
                 String doctorName = description.split(",")[2];
-                titleStr = "视频请求";
-                msgStr = doctorName + "请求与您视频，是否应答？";
+                titleStr = "Video request";
+                msgStr = doctorName + "Request a video call，Answer?？";
             }
             mTitleTV.setText(titleStr);
             mContentTV.setText("" + msgStr);
@@ -178,7 +178,7 @@ public class BaseActivity extends FragmentActivity implements OnPushListener {
     }
 
     private void goVedio(final String msg) {
-        showProgressDialog("正在连接服务器");
+        showProgressDialog("Connecting server");
         OkHttpHelper.get(OkHttpHelper.makeJsonParams("getvediotoken",
                 new String[]{"uid"},
                 new Object[]{mVip.getId()}), new Callback() {
@@ -190,7 +190,7 @@ public class BaseActivity extends FragmentActivity implements OnPushListener {
                         dismissProgressDialog();
                         String msg = e.getMessage();
                         if (msg.startsWith("Failed"))  {
-                            msg = "无法连接服务器，请检查网络";
+                            msg = "Unable to connect to the server，Please check the network";
                         }
                         ToastUtil.show(BaseActivity.this, "" + msg);
                     }
@@ -229,7 +229,7 @@ public class BaseActivity extends FragmentActivity implements OnPushListener {
                     @Override
                     public void run() {
                         dismissProgressDialog();
-                        ToastUtil.show(BaseActivity.this, "Token获取失败");
+                        ToastUtil.show(BaseActivity.this, "TokenAcquisition failed");
                     }
                 });
             }

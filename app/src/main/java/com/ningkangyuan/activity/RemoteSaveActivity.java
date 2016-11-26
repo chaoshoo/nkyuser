@@ -71,7 +71,7 @@ public class RemoteSaveActivity extends BaseActivity implements View.OnClickList
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.remote_save, null));
 
         mProtraitIV = (ImageView) findViewById(R.id.doctor_details_protrait);
@@ -238,12 +238,12 @@ public class RemoteSaveActivity extends BaseActivity implements View.OnClickList
     public void submit() {
         String date = mDateET.getText().toString();
         if (TextUtils.isEmpty(date)) {
-            ToastUtil.show(this,"请输入日期");
+            ToastUtil.show(this,"Please enter a date");
             return;
         }
         String time = mTimeET.getText().toString();
         if (TextUtils.isEmpty(time)) {
-            ToastUtil.show(this,"请输入时间");
+            ToastUtil.show(this,"Please enter time");
             return;
         }
         String orderTime = date + " " + time;
@@ -253,7 +253,7 @@ public class RemoteSaveActivity extends BaseActivity implements View.OnClickList
 //            e.printStackTrace();
 //        }
         final String remark = mRemarkET.getText().toString().trim();
-        showProgressDialog("正在提交..");
+        showProgressDialog("Submitting..");
         mCallList.add(OkHttpHelper.get(OkHttpHelper.makeJsonParams("remotesave",
                 new String[]{"vip_code","doctor_code","hospital_code","order_time","remark"},
                 new Object[]{mVip.getVip_code(),mDoctor.getCode(),mDoctor.getHospital_code(),

@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="40sp"
                 android:textColor="@android:color/white"
-                android:text="身高"/>
+                android:text="height"/>
             <TextView
                 android:id="@+id/main_xingti_height"
                 android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="40sp"
                 android:textColor="@android:color/white"
-                android:text="体重"/>
+                android:text="weight"/>
             <TextView
                 android:id="@+id/main_xingti_weight"
                 android:layout_width="wrap_content"

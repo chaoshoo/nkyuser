@@ -72,7 +72,7 @@ public class DoctorActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.doctor, null));
 
         mUpBtn = (Button) findViewById(R.id.doctor_up);
@@ -129,7 +129,7 @@ public class DoctorActivity extends BaseActivity implements View.OnClickListener
             hospital_code = "";
         }
         //得到医生数据
-        showProgressDialog("正在查询医生数据..");
+        showProgressDialog("Searching doctor data..");
         qryDoctor(mPage,null);
     }
 
@@ -172,19 +172,19 @@ public class DoctorActivity extends BaseActivity implements View.OnClickListener
             case R.id.doctor_up:
                 //上一页
                 if (mPage == 1) {
-                    ToastUtil.show(this,"已经是第一页了");
+                    ToastUtil.show(this,"First page.");
                     return;
                 }
-                showProgressDialog("正在查询数据..");
+                showProgressDialog("Querying data..");
                 qryDoctor(mPage,"-");
                 break;
             case R.id.doctor_next:
                 //下一页
                 if (mIsLastPage) {
-                    ToastUtil.show(this,"已经是最后一页了");
+                    ToastUtil.show(this,"Last page.");
                     return;
                 }
-                showProgressDialog("正在查询数据..");
+                showProgressDialog("Querying data..");
                 qryDoctor(mPage,"+");
                 break;
             case R.id.doctor_back:
@@ -201,7 +201,7 @@ public class DoctorActivity extends BaseActivity implements View.OnClickListener
         if ("-".equals(type)) {
             page --;
         }
-        showProgressDialog("正在获取医生信息..");
+        showProgressDialog("Retrieving doctor information..");
         mCallList.add(OkHttpHelper.get(OkHttpHelper.makeJsonParams("doctors",
                 new String[]{"code","name","pageIndex","pageSize","office_code","hospital_code"},
                 new Object[]{"","",page,PAGE_SIZE,office_code,hospital_code}), new Callback() {
@@ -248,7 +248,7 @@ public class DoctorActivity extends BaseActivity implements View.OnClickListener
                         @Override
                         public void run() {
                             dismissProgressDialog();
-                            ToastUtil.show(DoctorActivity.this, "暂无医生信息");
+                            ToastUtil.show(DoctorActivity.this, "No doctor information");
                         }
                     });
                 }

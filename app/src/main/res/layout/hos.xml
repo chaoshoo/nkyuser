@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/title_size"
         android:textColor="@android:color/white"
-        android:text="医院"/>
+        android:text="Hospital"/>
 
     <View
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             android:id="@+id/hos_up"
             android:layout_width="120dp"
             android:layout_height="50dp"
-            android:text="上一页"
+            android:text="Previous page"
             android:textColor="#0072b9"
             android:textSize="@dimen/btn_size"
             android:background="@drawable/white_btn"
@@ -39,7 +39,7 @@
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
-            android:text="下一页"
+            android:text="next page"
             android:textColor="#0072b9"
             android:textSize="@dimen/btn_size"
             android:background="@drawable/white_btn"
@@ -50,7 +50,7 @@
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
-            android:text="返回"
+            android:text="Return"
             android:textColor="#0072b9"
             android:textSize="@dimen/btn_size"
             android:background="@drawable/white_btn"

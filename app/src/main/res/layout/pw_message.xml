@@ -16,7 +16,7 @@
         android:ellipsize="end"
         android:gravity="center"
         android:textSize="@dimen/title_size"
-        android:text="我是标题"/>
+        android:text="I am the title"/>
 
 
     <TextView
@@ -26,7 +26,7 @@
         android:layout_marginTop="15dp"
         android:minHeight="180dp"
         android:textSize="@dimen/text_size"
-        android:text="  我是内容"/>
+        android:text="  I am content"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             android:background="@drawable/blue_btn"
             android:textSize="@dimen/btn_size"
             android:textColor="@android:color/white"
-            android:text="确定"
+            android:text="Confirmed"
             android:nextFocusRight="@+id/pw_message_cancel"/>
         <Button
             android:id="@+id/pw_message_cancel"
@@ -53,7 +53,7 @@
             android:background="@drawable/cyan_btn"
             android:textSize="@dimen/btn_size"
             android:textColor="@android:color/white"
-            android:text="取消"
+            android:text="cancel"
             android:nextFocusLeft="@+id/pw_message_confirm"/>
     </LinearLayout>
 

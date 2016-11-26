@@ -27,7 +27,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="提交时间"
+            android:text="Submit time"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
 
@@ -51,7 +51,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="处理时间"
+            android:text="processing time"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
 
@@ -80,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="已回复"
+            android:text="Replied"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
     </LinearLayout>

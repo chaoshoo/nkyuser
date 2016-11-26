@@ -128,7 +128,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,V
 
         findViewById(R.id.main_my).requestFocus();
 
-        mCheckCardTV.setText("检查卡号" + mVip.getCard_code());
+        mCheckCardTV.setText("Check card number" + mVip.getCard_code());
         String userName = mVip.getReal_name();
         if (TextUtils.isEmpty(userName)) {
             userName = mVip.getMobile();
@@ -139,10 +139,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,V
         mBluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
         mBluetoothAdapter = mBluetoothManager.getAdapter();
         if (mBluetoothAdapter == null) {
-            ToastUtil.show(this,"未检测到本设备的蓝牙模块");
+            ToastUtil.show(this,"Bluetooth module was not detected.");
         }
 
-        showProgressDialog("正在查询测量数据..");
+        showProgressDialog("Querying measured data..");
         qryOrder();
         getLastInfo();
     }
@@ -244,9 +244,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,V
         super.onResume();
         excuteGetInfoTimer();
         if (MyApplication.isRefreshMain) {
-            showProgressDialog("正在查询测量数据..");
+            showProgressDialog("Querying measured data..");
             mVip = Shared.getInstance().getLocalVip(this);
-            mCheckCardTV.setText("检查卡号" + mVip.getCard_code());
+            mCheckCardTV.setText("Check card number" + mVip.getCard_code());
             String userName = mVip.getReal_name();
             if (TextUtils.isEmpty(userName)) {
                 userName = mVip.getMobile();
@@ -361,7 +361,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,V
                     public void run() {
                         String msg = e.getMessage();
                         if (msg.startsWith("Failed"))  {
-                            msg = "无法连接服务器，请检查网络";
+                            msg = "Unable to connect to the server，Please check the network";
                         }
                         ToastUtil.show(MainActivity.this, msg);
                     }
@@ -382,11 +382,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,V
                             if (!tempList.isEmpty()) {
                                 findViewById(R.id.main_no_reg).setVisibility(View.GONE);
                                 Order order = tempList.get(0);
-                                mRegistrationInfoTV.setText("预诊时间：" + order.getOutpdate() + "\n订单号：" + order.getOrderid() + "\n挂号费：" + order.getOrderfee() + "元\n医院："
-                                 + order.getHosname() + "\n科室：" + order.getDeptname() + "\n医生：" + order.getDocname());
+                                mRegistrationInfoTV.setText("Pre-consultation time：" + order.getOutpdate() + "\nOrder number：" + order.getOrderid() + "\nRegistration fee：" + order.getOrderfee() + "element\nHospital："
+                                 + order.getHosname() + "\nDepartment：" + order.getDeptname() + "\nDoctor：" + order.getDocname());
                             } else {
                                 findViewById(R.id.main_no_reg).setVisibility(View.VISIBLE);
-                                mRegistrationInfoTV.setText("暂无挂号信息");
+                                mRegistrationInfoTV.setText("No registration information");
                             }
                         }
                     });
@@ -395,7 +395,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,V
                         @Override
                         public void run() {
                             findViewById(R.id.main_no_reg).setVisibility(View.VISIBLE);
-                            mRegistrationInfoTV.setText("暂无挂号信息");
+                            mRegistrationInfoTV.setText("No registration information");
                         }
                     });
                 }
@@ -423,7 +423,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,V
 //                        if (msg.startsWith("Failed"))  {
 //                            msg = "无法连接服务器，请检查网络";
 //                        }
-                        ToastUtil.show(MainActivity.this, "无法连接服务器，请检查网络");
+                        ToastUtil.show(MainActivity.this, "Unable to connect to the server，Please check the network");
                     }
                 });
             }
@@ -516,11 +516,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,V
         for(DetectionKPI detectionKPI : detectionKPIList) {
             String str = "";
             if (Measure.XueTang.CODE_GLU0.equals(detectionKPI.getKpi_code())) {
-                str = "随机血糖";
+                str = "Random blood glucose";
             } else if (Measure.XueTang.CODE_GLU1.equals(detectionKPI.getKpi_code())) {
-                str = "餐前血糖";
+                str = "Pre-meal blood glucose";
             } else if (Measure.XueTang.CODE_GLU2.equals(detectionKPI.getKpi_code())) {
-                str = "餐后血糖";
+                str = "Postprandial blood glucose";
             }
             mTypeTV.setText(str);
             mValueTV.setText(detectionKPI.getInspect_value());
@@ -570,7 +570,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,V
         }
         mStatusIV.setImageResource(status);
 
-        String desc = "参考阈值  ";
+        String desc = "Reference threshold  ";
         for (int i = 0; i < detectionKPIList.size();i ++) {
             desc += " " + detectionKPIList.get(i).getInspect_desc();
         }
@@ -578,17 +578,17 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,V
 
         DetectionKPI detectionKPI = detectionKPIList.get(0);
         String inspect_time = detectionKPI.getInspect_time();
-        mCheckTimeTV.setText("最近一次检测：" + inspect_time);
+        mCheckTimeTV.setText("Recent test：" + inspect_time);
         String type = "";
         String value = "";
         if (Measure.XueTang.INSPECT_CODE.equals(detectionKPI.getInspect_code())) {
-            type = "血糖";
+            type = "blood sugar";
             value = detectionKPI.getInspect_value();
         } else if (Measure.XueYa.INSPECT_CODE.equals(detectionKPI.getInspect_code())) {
-            type = "血压";
+            type = "blood pressure";
             value = mHighPressTV.getText() + "/" + mLowPressTV.getText();
         } else if (Measure.XingTi.INSPECT_CODE.equals(detectionKPI.getInspect_code())) {
-            type = "形体";
+            type = "body";
             value = mHeightTV.getText() + "/" + mWeightTV.getText();
         }
         mCheckTypeTV.setText(type);
@@ -603,8 +603,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,V
         mDetectionKpiContentFL.removeAllViews();
         mDetectionKpiContentFL.addView(mEmptyView);
 
-        mCheckTimeTV.setText("最近一次检测时间：--");
-        mCheckTypeTV.setText("血压");
+        mCheckTimeTV.setText("Last test time：--");
+        mCheckTypeTV.setText("blood pressure");
         mCheckValueTV.setText("--");
         mReferenceTV.setText("");
     }

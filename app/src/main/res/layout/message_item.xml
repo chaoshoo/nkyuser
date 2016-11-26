@@ -18,7 +18,7 @@
         android:textSize="16sp"
         android:textColor="@android:color/white"
         android:gravity="center"
-        android:text="奥巴马说"/>
+        android:text="Obama said"/>
 
     <TextView
         android:id="@+id/message_item_content"
@@ -27,7 +27,7 @@
         android:layout_weight="3"
         android:textSize="14sp"
         android:textColor="@android:color/white"
-        android:text="  看电视看积分换大酒店好东东还发生过就是掉个喀什市的说法是绝大多数就打电话梵蒂冈符合规范"/>
+        android:text="  Watching TV points for the hotel to see the integration of good things also happened to be out of the city of Kashi is the vast majority of calls to the Vatican in line with the norms"/>
 
     <TextView
         android:id="@+id/message_item_time"

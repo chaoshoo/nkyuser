@@ -39,7 +39,7 @@
         android:layout_marginTop="20dp"
         android:textSize="20sp"
         android:textColor="@android:color/white"
-        android:text="可挂(医院正式确定的排班表)"/>
+        android:text="Available(The hospital officially confirmed the scheduling table)"/>
 
     <TextView
         android:id="@+id/schedule_item_flag"
@@ -49,6 +49,6 @@
         android:layout_gravity="right"
         android:textSize="26sp"
         android:textColor="@android:color/white"
-        android:text="点击挂号"/>
+        android:text="Click to registr"/>
 
 </LinearLayout>

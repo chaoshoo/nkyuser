@@ -87,7 +87,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     private void login() {
         if (checkParams()) {
-            showProgressDialog("正在登录..");
+            showProgressDialog("Logging in..");
 
             OkHttpHelper.get(OkHttpHelper.makeJsonParams("userlogin",
                     new String[]{"num","password","android_tv_channel_id"},
@@ -100,7 +100,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                             dismissProgressDialog();
                             String msg = e.getMessage();
                             if (msg.startsWith("Failed"))  {
-                                msg = "无法连接服务器，请检查网络";
+                                msg = "Unable to connect to the server，Please check the network";
                             }
                             ToastUtil.show(LoginActivity.this, msg);
                         }
@@ -143,7 +143,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private boolean checkParams() {
         mIdentityStr = mIdentityET.getText().toString().trim();
         if (TextUtils.isEmpty(mIdentityStr)) {
-            ToastUtil.show(this,"请输入身份证或者手机号");
+            ToastUtil.show(this,"Please enter your ID or phone number.");
             return false;
         }
 //        mPhoneStr = mPhoneET.getText().toString().trim();

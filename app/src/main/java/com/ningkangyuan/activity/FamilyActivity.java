@@ -71,7 +71,7 @@ public class FamilyActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.family, null));
 
         mCurrentNameTV = (TextView) findViewById(R.id.family_current_name);
@@ -79,7 +79,7 @@ public class FamilyActivity extends BaseActivity implements View.OnClickListener
         if (TextUtils.isEmpty(userName)) {
             userName = mVip.getMobile();
         }
-        mCurrentNameTV.setText("当前成员：" + userName);
+        mCurrentNameTV.setText("Current member：" + userName);
         findViewById(R.id.family_back).setOnClickListener(this);
         findViewById(R.id.family_back).setOnFocusChangeListener(this);
 
@@ -161,18 +161,18 @@ public class FamilyActivity extends BaseActivity implements View.OnClickListener
         mFamilyList.clear();
 
         Vip addVip = new Vip();
-        addVip.setReal_name("绑定成员");
+        addVip.setReal_name("Bind member");
         mFamilyList.add(addVip);
 
         addVip = new Vip();
-        addVip.setReal_name("微信扫我");
+        addVip.setReal_name("WeChat sweep me");
         mFamilyList.add(addVip);
 
         mFamilyAdapter.notifyDataSetChanged();
     }
 
     private void qryFamilyChild() {
-        showProgressDialog("正在查询成员数据..");
+        showProgressDialog("Searching member data..");
         mCallList.add(OkHttpHelper.get(
                 OkHttpHelper.makeJsonParams("vipfamilylist",
                         new String[]{"vip_code"},
@@ -185,7 +185,7 @@ public class FamilyActivity extends BaseActivity implements View.OnClickListener
                                 dismissProgressDialog();
                                 String msg = e.getMessage();
                                 if (msg.startsWith("Failed")) {
-                                    msg = "无法连接服务器，请检查网络";
+                                    msg = "Unable to connect to the server，Please check the network";
                                 }
                                 ToastUtil.show(FamilyActivity.this, msg);
                             }
@@ -205,11 +205,11 @@ public class FamilyActivity extends BaseActivity implements View.OnClickListener
 
                             //构造一个Vip,作为第一个使用
                             Vip addVip = new Vip();
-                            addVip.setReal_name("绑定成员");
+                            addVip.setReal_name("Bind member");
                             mFamilyList.add(addVip);
 
                             addVip = new Vip();
-                            addVip.setReal_name("微信扫我");
+                            addVip.setReal_name("WeChat sweep me");
                             mFamilyList.add(addVip);
                             mFamilyList.addAll(tempList);
                             runOnUiThread(new Runnable() {
@@ -254,15 +254,15 @@ public class FamilyActivity extends BaseActivity implements View.OnClickListener
     private void saveFamilyChild() {
         String card = mFamilyAccountET.getText().toString().trim();
         if (TextUtils.isEmpty(card)) {
-            ToastUtil.show(this,"请输入身份证号");
+            ToastUtil.show(this,"Please enter your ID number.");
             return;
         }
         String pass = mFamilyPassET.getText().toString().trim();
         if (TextUtils.isEmpty(card)) {
-            ToastUtil.show(this, "请输入密码");
+            ToastUtil.show(this, "Please input a password");
             return;
         }
-        showProgressDialog("正在绑定..");
+        showProgressDialog("Bounding..");
         mCallList.add(OkHttpHelper.get(OkHttpHelper.makeJsonParams("savevipfamily",
                 new String[]{"vip_code", "family_account", "family_pwd"},
                 new Object[]{mVip.getVip_code(), card, pass}), new Callback() {
@@ -274,7 +274,7 @@ public class FamilyActivity extends BaseActivity implements View.OnClickListener
                         dismissProgressDialog();
                         String msg = e.getMessage();
                         if (msg.startsWith("Failed")) {
-                            msg = "无法连接服务器，请检查网络";
+                            msg = "Unable to connect to the server，Please check the network";
                         }
                         ToastUtil.show(FamilyActivity.this, msg);
                     }
@@ -308,7 +308,7 @@ public class FamilyActivity extends BaseActivity implements View.OnClickListener
     private void switchChild() {
         mVip = mFamilyList.get(mPosition);
         MyApplication.isRefreshMain = true;
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         String userName = mVip.getReal_name();
         if (TextUtils.isEmpty(userName)) {
             userName = mVip.getMobile();
@@ -316,12 +316,12 @@ public class FamilyActivity extends BaseActivity implements View.OnClickListener
         mCurrentNameTV.setText(userName);
         getSharedPreferences("login", 0).edit().putString("vip", JsonUtil.mGson.toJson(mVip)).commit();
         clearList();
-        ToastUtil.show(FamilyActivity.this, "成员切换成功");
+        ToastUtil.show(FamilyActivity.this, "Members switched");
         qryFamilyChild();
     }
 
     private void unBindChild() {
-        showProgressDialog("正在解除绑定..");
+        showProgressDialog("Removing binding..");
         mCallList.add(OkHttpHelper.get(OkHttpHelper.makeJsonParams("deletebind",
                 new String[]{"vip_code", "vip_card", "bind_account"},
                 new Object[]{mVip.getVip_code(), mVip.getCard_code(), mFamilyList.get(mPosition).getCard_code()}), new Callback() {
@@ -333,7 +333,7 @@ public class FamilyActivity extends BaseActivity implements View.OnClickListener
                         dismissProgressDialog();
                         String msg = e.getMessage();
                         if (msg.startsWith("Failed")) {
-                            msg = "无法连接服务器，请检查网络";
+                            msg = "Unable to connect to the server，Please check the network";
                         }
                         ToastUtil.show(FamilyActivity.this, msg);
                     }
@@ -364,16 +364,16 @@ public class FamilyActivity extends BaseActivity implements View.OnClickListener
     private void showItemClickDialog() {
         if (mItemClickDialog == null) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("提示");
-            builder.setMessage("请选择操作");
-            builder.setPositiveButton("点错了", null);
-            builder.setNeutralButton("切换此成员", new DialogInterface.OnClickListener() {
+            builder.setTitle("Prompt");
+            builder.setMessage("Please select operation");
+            builder.setPositiveButton("Click the wrong place", null);
+            builder.setNeutralButton("Switch to this member", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     switchChild();
                 }
             });
-            builder.setNegativeButton("解绑此成员", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton("Bind this member", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     unBindChild();

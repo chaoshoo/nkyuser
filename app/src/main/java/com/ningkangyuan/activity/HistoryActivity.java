@@ -69,7 +69,7 @@ public class HistoryActivity extends BaseActivity implements View.OnFocusChangeL
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.history, null));
 
         findViewById(R.id.history_back).setOnClickListener(new View.OnClickListener() {
@@ -145,7 +145,7 @@ public class HistoryActivity extends BaseActivity implements View.OnFocusChangeL
 
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
-                showProgressDialog("正在加载..");
+                showProgressDialog("Being loaded..");
             }
 
             @Override

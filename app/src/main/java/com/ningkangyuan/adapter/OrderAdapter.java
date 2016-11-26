@@ -39,8 +39,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Order order = mOrderList.get(position);
-        holder.mOrderNumTV.setText("预诊时间：" + order.getOutpdate() + "\n订单编号：" + order.getOrderid());
-        String content = "订单金额：" + order.getOrderfee() + "元";
+        holder.mOrderNumTV.setText("Pre-consultation time：" + order.getOutpdate() + "\nOrder number：" + order.getOrderid());
+        String content = "Order amount：" + order.getOrderfee() + "element";
         String status = "";
         String orderTime = order.getCreate_time();
         String payTime = order.getPayrtime();
@@ -60,21 +60,21 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
         }
 
         if ("1".equals(order.getStatus())) {
-            holder.mOrderStatusTV.setText("待支付");
+            holder.mOrderStatusTV.setText("To be paid");
         } else if ("2".equals(order.getStatus())) {
-            content += "\n" + "确认时间：" + orderTime;
-            status = "已确认";
+            content += "\n" + "Confirmation time：" + orderTime;
+            status = "Confirmed";
         } else if ("3".equals(order.getStatus())) {
-            content += "\n" + "确认时间：" + orderTime + "\n" + "支付时间：" + payTime;
-            status = "已支付";
+            content += "\n" + "Confirmation time：" + orderTime + "\n" + "Payment time：" + payTime;
+            status = "Paid";
         } else if ("4".equals(order.getStatus())) {
-            content += "\n" + "确认时间：" + orderTime;
-            status = "支付失败";
+            content += "\n" + "Confirmation time：" + orderTime;
+            status = "Payment failed";
         } else if ("5".equals(order.getStatus())) {
-            content += "\n" + "取消时间：" + cancelTime + "\n" + "取消原因：" + order.getCancelreason();
-            status = "已取消";
+            content += "\n" + "Cancellation time：" + cancelTime + "\n" + "Cancel reason：" + order.getCancelreason();
+            status = "Canceled";
         } else if ("6".equals(order.getStatus())) {
-            status = "挂号失败";
+            status = "Registr failed";
         }
         holder.mOrderContentTV.setText(content);
         holder.mOrderStatusTV.setText(status);

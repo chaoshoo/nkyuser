@@ -65,7 +65,7 @@ public class DocActivity extends BaseActivity implements View.OnClickListener,Vi
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.doc, null));
 
         mUpBtn = (Button) findViewById(R.id.doc_up);
@@ -138,7 +138,7 @@ public class DocActivity extends BaseActivity implements View.OnClickListener,Vi
             case R.id.doc_up:
                 //上一页
                 if (mPage == 0) {
-                    ToastUtil.show(this,"已经是第一页了");
+                    ToastUtil.show(this,"First page.");
                     return;
                 }
                 qryDoc(mPage, "-");
@@ -146,7 +146,7 @@ public class DocActivity extends BaseActivity implements View.OnClickListener,Vi
             case R.id.doc_next:
                 //下一页
                 if (isLastPage) {
-                    ToastUtil.show(this,"已经是最后一页了");
+                    ToastUtil.show(this,"Last page.");
                     return;
                 }
                 qryDoc(mPage, "+");
@@ -159,7 +159,7 @@ public class DocActivity extends BaseActivity implements View.OnClickListener,Vi
     }
 
     private void qryDoc(int page, final String type) {
-        showProgressDialog("正在查询数据");
+        showProgressDialog("Querying data");
         if ("+".equals(type)) {
             page ++;
         } else if ("-".equals(type)) {
@@ -176,7 +176,7 @@ public class DocActivity extends BaseActivity implements View.OnClickListener,Vi
                         dismissProgressDialog();
                         String msg = e.getMessage();
                         if (msg.startsWith("Failed"))  {
-                            msg = "无法连接服务器，请检查网络";
+                            msg = "Unable to connect to the server，Please check the network";
                         }
                         ToastUtil.show(DocActivity.this, msg);
                     }
@@ -220,7 +220,7 @@ public class DocActivity extends BaseActivity implements View.OnClickListener,Vi
                     @Override
                     public void run() {
                         dismissProgressDialog();
-                        ToastUtil.show(DocActivity.this, "暂无数据显示");
+                        ToastUtil.show(DocActivity.this, "No data show");
                     }
                 });
             }

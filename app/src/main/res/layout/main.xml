@@ -52,7 +52,7 @@
                 android:gravity="center"
                 android:textSize="24sp"
                 android:textColor="@android:color/white"
-                android:text="参考阈值"
+                android:text="Reference threshold"
                 />
 
         </LinearLayout>
@@ -97,7 +97,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="20sp"
-                        android:text="和贝贝"
+                        android:text="And babe"
                         android:textColor="@android:color/black"
                         />
                     <LinearLayout
@@ -110,7 +110,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="24sp"
                             android:textColor="@android:color/black"
-                            android:text="血压"
+                            android:text="blood pressure"
                             />
                         <TextView
                             android:id="@+id/main_check_value"
@@ -130,7 +130,7 @@
                         android:layout_marginTop="5dp"
                         android:textSize="18sp"
                         android:textColor="@android:color/black"
-                        android:text="最近一次检测时间:2016-08-07"
+                        android:text="Last test time:2016-08-07"
                         />
                 </LinearLayout>
             </LinearLayout>
@@ -169,7 +169,7 @@
                         android:gravity="center_vertical"
                         android:textSize="18sp"
                         android:textColor="@android:color/white"
-                        android:text="暂无挂号信息"/>
+                        android:text="No registration information"/>
                 </LinearLayout>
 
                 <ImageView

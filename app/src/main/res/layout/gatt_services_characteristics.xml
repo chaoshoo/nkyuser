@@ -28,7 +28,7 @@
         android:background="@drawable/blue_btn"
         android:textSize="24sp"
         android:textColor="@android:color/white"
-        android:text="若没有开始测量，请点我"/>
+        android:text="If you don't start measuring，Please click me"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="设备地址："
+            android:text="Device address："
             android:textSize="20sp" />
 
         <Space
@@ -62,7 +62,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="连接状态："
+            android:text="Connection status："
             android:textSize="20sp" />
 
         <Space
@@ -85,7 +85,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="发送数据："
+            android:text="send message："
             android:textSize="20sp" />
 
         <Space
@@ -110,7 +110,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="接收数据："
+            android:text="receive data："
             android:textSize="20sp" />
 
         <Space
@@ -135,7 +135,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="测量结果："
+            android:text="measurement results："
             android:textSize="20sp" />
 
         <Space

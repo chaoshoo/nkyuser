@@ -55,7 +55,7 @@ public class RemoteDetailsActivity extends BaseActivity implements View.OnClickL
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.remote_details, null));
 
         mProtraitIV = (ImageView) findViewById(R.id.doctor_details_protrait);
@@ -83,10 +83,10 @@ public class RemoteDetailsActivity extends BaseActivity implements View.OnClickL
         mOrderTimeTV.setText(mRemote.getOrder_time());
         mRemarkTV.setText(mRemote.getRemark());
         if ("1".equals(mRemote.getIszd())) {
-            mIsZDTV.setText("是");
+            mIsZDTV.setText("yes");
             mBeginTimeTV.setText(mRemote.getZd_begin_time());
             if ("1".equals(mRemote.getIsdeal())) {
-                mIsDealTV.setText("是");
+                mIsDealTV.setText("yes");
                 mEndTimeTV.setText(mRemote.getZd_end_Time());
                 //评价
 //                mEvaluateRB.setRating();
@@ -112,7 +112,7 @@ public class RemoteDetailsActivity extends BaseActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.remote_details_cancel:
                 if ("1".equals(mRemote.getIsdeal())) {
-                    ToastUtil.show(this,"此远程咨询已处理过，不能被取消");
+                    ToastUtil.show(this,"This remote consultation has been processed，Can not be canceled");
                     return;
                 }
                 cancelSubscribe();
@@ -130,7 +130,7 @@ public class RemoteDetailsActivity extends BaseActivity implements View.OnClickL
             public void run() {
                 dismissProgressDialog();
                 if (doctor == null) {
-                    ToastUtil.show(RemoteDetailsActivity.this, "医生信息获取失败");
+                    ToastUtil.show(RemoteDetailsActivity.this, "Doctor's information acquisition failed");
                     return;
                 }
                 mNameTV.setText(doctor.getName());
@@ -143,7 +143,7 @@ public class RemoteDetailsActivity extends BaseActivity implements View.OnClickL
     }
 
     private void getDoctorInfo() {
-        showProgressDialog("正在查询医生信息..");
+        showProgressDialog("Searching doctor information..");
         mCallList.add(OkHttpHelper.get(OkHttpHelper.makeJsonParams("doctors",
                 new String[]{"code","office_code","hospital_code"},
                 new Object[]{mRemote.getDoctor_code(),"",mRemote.getHospital_code()}), new Callback() {
@@ -179,7 +179,7 @@ public class RemoteDetailsActivity extends BaseActivity implements View.OnClickL
     }
 
     private void cancelSubscribe() {
-        showProgressDialog("正在取消..");
+        showProgressDialog("Cancelling..");
         mCallList.add(OkHttpHelper.get(OkHttpHelper.makeJsonParams("remotecancel",
                 new String[]{"remote_code"},
                 new Object[]{mRemote.getCode()}), new Callback() {

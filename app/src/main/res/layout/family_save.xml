@@ -27,7 +27,7 @@
             android:textSize="28sp"
             android:textColor="@color/cyan"
             android:gravity="center"
-            android:text="绑定成员"
+            android:text="Bind member"
             />
 
         <LinearLayout
@@ -48,7 +48,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:background="@null"
-                android:hint="请输入身份证或手机号"
+                android:hint="Please enter your ID or phone number."
                 android:textSize="24sp"
                 android:nextFocusUp="@+id/family_save_close"
                 android:nextFocusDown="@+id/family_save_pass"
@@ -75,7 +75,7 @@
                 android:layout_marginLeft="10dp"
                 android:inputType="textPassword"
                 android:background="@null"
-                android:hint="请输入密码"
+                android:hint="Please input a password"
                 android:textSize="24sp"
                 android:nextFocusUp="@+id/family_save_card"
                 android:nextFocusDown="@+id/family_save_confirm"
@@ -90,7 +90,7 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/blue_btn"
             android:textColor="@android:color/white"
-            android:text="确定"
+            android:text="Confirmed"
             android:textSize="24sp"
             android:nextFocusUp="@+id/family_save_pass"/>
     </LinearLayout>

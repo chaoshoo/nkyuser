@@ -49,7 +49,7 @@ public class QuestionSaveActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.question_save, null));
 
         mProtraitIV = (ImageView) findViewById(R.id.doctor_details_protrait);
@@ -92,15 +92,15 @@ public class QuestionSaveActivity extends BaseActivity implements View.OnClickLi
     public void submit() {
         String title = mTitleET.getText().toString().trim();
         if (TextUtils.isEmpty(title)) {
-            ToastUtil.show(this,"请输入标题");
+            ToastUtil.show(this,"Please enter a title");
             return;
         }
         final String content = mContentET.getText().toString().trim();
         if (TextUtils.isEmpty(content)) {
-            ToastUtil.show(this,"请填写内容");
+            ToastUtil.show(this,"Please input content");
             return;
         }
-        showProgressDialog("正在提交..");
+        showProgressDialog("Submitting..");
         mCallList.add(OkHttpHelper.get(OkHttpHelper.makeJsonParams("questionsave",
                 new String[]{"vip_code", "doctor_code", "title", "content", "attachement"},
                 new Object[]{mVip.getVip_code(), mDoctor.getCode(), title, content, ""}), new Callback() {

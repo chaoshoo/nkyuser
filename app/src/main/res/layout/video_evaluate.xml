@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:textSize="20sp"
-        android:hint="输入评价"/>
+        android:hint="Input evaluation"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30sp"
-            android:text="打分"/>
+            android:text="Mark"/>
 
         <RatingBar
             android:id="@+id/video_evaluate_rat"
@@ -45,6 +45,6 @@
         android:background="@drawable/blue_btn"
         android:textColor="@android:color/white"
         android:textSize="24sp"
-        android:text="提交"/>
+        android:text="Submit"/>
     
 </LinearLayout>

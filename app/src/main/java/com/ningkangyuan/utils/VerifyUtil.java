@@ -18,7 +18,7 @@ public class VerifyUtil {
         String Ai = "";
         // 判断号码的长度 15位或18位
         if (IDStr.length() != 15 && IDStr.length() != 18) {
-            tipInfo = "身份证号码长度应该为15位或18位。";
+            tipInfo = "ID number length should be15Or18position。";
             return tipInfo;
         }
 
@@ -30,7 +30,7 @@ public class VerifyUtil {
             Ai = IDStr.substring(0, 6) + "19" + IDStr.substring(6, 15);
         }
         if (isNumeric(Ai) == false) {
-            tipInfo = "身份证15位号码都应为数字 ; 18位号码除最后一位外，都应为数字。";
+            tipInfo = "ID15Bit numbers should be numeric ; 18Bit number in addition to the last one，All should be numbers。";
             return tipInfo;
         }
 
@@ -38,9 +38,9 @@ public class VerifyUtil {
         // 判断出生年月是否有效
         String strYear = Ai.substring(6, 10);// 年份
         String strMonth = Ai.substring(10, 12);// 月份
-        String strDay = Ai.substring(12, 14);// 日期
+        String strDay = Ai.substring(12, 14);// Date,
         if (isDate(strYear + "-" + strMonth + "-" + strDay) == false) {
-            tipInfo = "身份证出生日期无效。";
+            tipInfo = "Birth date is not valid。";
             return tipInfo;
         }
         GregorianCalendar gc = new GregorianCalendar();
@@ -49,7 +49,7 @@ public class VerifyUtil {
             if ((gc.get(Calendar.YEAR) - Integer.parseInt(strYear)) > 150
                     || (gc.getTime().getTime() - s.parse(
                     strYear + "-" + strMonth + "-" + strDay).getTime()) < 0) {
-                tipInfo = "身份证生日不在有效范围。";
+                tipInfo = "ID card birthday is not valid。";
                 return tipInfo;
             }
         } catch (NumberFormatException e) {
@@ -58,11 +58,11 @@ public class VerifyUtil {
             e.printStackTrace();
         }
         if (Integer.parseInt(strMonth) > 12 || Integer.parseInt(strMonth) == 0) {
-            tipInfo = "身份证月份无效";
+            tipInfo = "ID card month is invalid";
             return tipInfo;
         }
         if (Integer.parseInt(strDay) > 31 || Integer.parseInt(strDay) == 0) {
-            tipInfo = "身份证日期无效";
+            tipInfo = "Id date is invalid";
             return tipInfo;
         }
 
@@ -71,12 +71,12 @@ public class VerifyUtil {
         Hashtable areacode = GetAreaCode();
         //如果身份证前两位的地区码不在Hashtable，则地区码有误
         if (areacode.get(Ai.substring(0, 2)) == null) {
-            tipInfo = "身份证地区编码错误。";
+            tipInfo = "ID area code error。";
             return tipInfo;
         }
 
         if(isVarifyCode(Ai,IDStr)==false){
-            tipInfo = "身份证校验码无效，不是合法的身份证号码";
+            tipInfo = "ID check code is invalid，Not a valid ID number.";
             return tipInfo;
         }
 
@@ -125,41 +125,41 @@ public class VerifyUtil {
 
     private static Hashtable GetAreaCode() {
         Hashtable hashtable = new Hashtable();
-        hashtable.put("11", "北京");
-        hashtable.put("12", "天津");
-        hashtable.put("13", "河北");
-        hashtable.put("14", "山西");
-        hashtable.put("15", "内蒙古");
-        hashtable.put("21", "辽宁");
-        hashtable.put("22", "吉林");
-        hashtable.put("23", "黑龙江");
-        hashtable.put("31", "上海");
-        hashtable.put("32", "江苏");
-        hashtable.put("33", "浙江");
-        hashtable.put("34", "安徽");
-        hashtable.put("35", "福建");
-        hashtable.put("36", "江西");
-        hashtable.put("37", "山东");
-        hashtable.put("41", "河南");
-        hashtable.put("42", "湖北");
-        hashtable.put("43", "湖南");
-        hashtable.put("44", "广东");
-        hashtable.put("45", "广西");
-        hashtable.put("46", "海南");
-        hashtable.put("50", "重庆");
-        hashtable.put("51", "四川");
-        hashtable.put("52", "贵州");
-        hashtable.put("53", "云南");
-        hashtable.put("54", "西藏");
-        hashtable.put("61", "陕西");
-        hashtable.put("62", "甘肃");
-        hashtable.put("63", "青海");
-        hashtable.put("64", "宁夏");
-        hashtable.put("65", "新疆");
-        hashtable.put("71", "台湾");
-        hashtable.put("81", "香港");
-        hashtable.put("82", "澳门");
-        hashtable.put("91", "国外");
+        hashtable.put("11", "beijing");
+        hashtable.put("12", "tianjin");
+        hashtable.put("13", "hebei");
+        hashtable.put("14", "shanxi");
+        hashtable.put("15", "innermongolia");
+        hashtable.put("21", "liaoning");
+        hashtable.put("22", "jilin");
+        hashtable.put("23", "heilongjiang");
+        hashtable.put("31", "shanghai");
+        hashtable.put("32", "jiangsu");
+        hashtable.put("33", "zhejiang");
+        hashtable.put("34", "anhui");
+        hashtable.put("35", "fujian");
+        hashtable.put("36", "jiangxi");
+        hashtable.put("37", "shandong");
+        hashtable.put("41", "henan");
+        hashtable.put("42", "hubei");
+        hashtable.put("43", "hunan");
+        hashtable.put("44", "guangdong");
+        hashtable.put("45", "guangxi");
+        hashtable.put("46", "hainan");
+        hashtable.put("50", "chongqing");
+        hashtable.put("51", "sichuan");
+        hashtable.put("52", "guizhou");
+        hashtable.put("53", "yunnan");
+        hashtable.put("54", "tibet");
+        hashtable.put("61", "shaanxi");
+        hashtable.put("62", "gansu");
+        hashtable.put("63", "qinghai");
+        hashtable.put("64", "ningxia");
+        hashtable.put("65", "xinjiang");
+        hashtable.put("71", "taiwan");
+        hashtable.put("81", "hongkong");
+        hashtable.put("82", "macau");
+        hashtable.put("91", "abroad");
         return hashtable;
     }
 

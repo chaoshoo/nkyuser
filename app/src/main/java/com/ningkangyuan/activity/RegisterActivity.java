@@ -94,11 +94,11 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 //获取验证码
                 mAuthPhone = mPhoneET.getText().toString().trim();
                 if (TextUtils.isEmpty(mAuthPhone)) {
-                    ToastUtil.show(this,"请输入手机号码");
+                    ToastUtil.show(this,"Please enter your mobile phone number");
                     return;
                 }
                 if (!VerifyUtil.isMobile(mAuthPhone)) {
-                    ToastUtil.show(this,"请输入正确的手机号码");
+                    ToastUtil.show(this,"Please enter the correct cell phone number.");
                     return;
                 }
                 getAuthCode(mAuthPhone);
@@ -125,13 +125,13 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        mAuthcodeBTN.setText("重新获取(" + mCount + ")");
+                        mAuthcodeBTN.setText("Re-acquisition(" + mCount + ")");
                         if (mCount == 0) {
                             mTimer.cancel();
                             mTimer = null;
 
                             mCount = 60;
-                            mAuthcodeBTN.setText("重新获取");
+                            mAuthcodeBTN.setText("Re-acquisition");
                             mAuthcodeBTN.setEnabled(true);
                         }
                     }
@@ -157,7 +157,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                         dismissProgressDialog();
                         String msg = e.getMessage();
                         if (msg.startsWith("Failed"))  {
-                            msg = "无法连接服务器，请检查网络";
+                            msg = "Unable to connect to the server，Please check the network";
                         }
                         ToastUtil.show(RegisterActivity.this, msg);
                     }
@@ -193,7 +193,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         mPassword = mPasswordET.getText().toString().trim();
 
         if (TextUtils.isEmpty(mIdCard)) {
-            ToastUtil.show(this,"请输入身份证");
+            ToastUtil.show(this,"Please enter your ID");
             return;
         }
 //        String tempStr = VerifyUtil.IDCardValidate(mIdCard);
@@ -203,26 +203,26 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 //        }
 
         if (TextUtils.isEmpty(mPhone)) {
-            ToastUtil.show(this,"请输入手机号码");
+            ToastUtil.show(this,"Please enter your mobile phone number");
             return;
         }
         if (!VerifyUtil.isMobile(mPhone)) {
-            ToastUtil.show(this,"请输入正确的手机号码");
+            ToastUtil.show(this,"Please enter the correct cell phone number.");
             return;
         }
 
         if (TextUtils.isEmpty(authCode)) {
-            ToastUtil.show(this,"请输入验证码");
+            ToastUtil.show(this,"Please enter verification code");
             return;
         }
 
         if (!mPhone.equals(mAuthPhone)) {
-            ToastUtil.show(this,"请输入接收短信的手机号码");
+            ToastUtil.show(this,"Please enter the phone number to receive text messages");
             return;
         }
 
         if (TextUtils.isEmpty(mPassword)) {
-            ToastUtil.show(this,"请输入密码");
+            ToastUtil.show(this,"Please input a password");
             return;
         }
 
@@ -233,7 +233,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             e.printStackTrace();
         }
 
-        showProgressDialog("正在提交..");
+        showProgressDialog("Submitting..");
         JSONObject params = new JSONObject();
         try {
             params.put("type","checkmessage");
@@ -251,7 +251,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                         dismissProgressDialog();
                         String msg = e.getMessage();
                         if (msg.startsWith("Failed"))  {
-                            msg = "无法连接服务器，请检查网络";
+                            msg = "Unable to connect to the server，Please check the network";
                         }
                         ToastUtil.show(RegisterActivity.this, msg);
                     }

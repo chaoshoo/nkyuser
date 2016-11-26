@@ -69,7 +69,7 @@ public class DeptActivity extends BaseActivity implements View.OnClickListener,V
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.dept, null));
 
         mUpBtn = (Button) findViewById(R.id.dept_up);
@@ -140,7 +140,7 @@ public class DeptActivity extends BaseActivity implements View.OnClickListener,V
             case R.id.dept_up:
                 //上一页
                 if (mPage == 0) {
-                    ToastUtil.show(this,"已经是第一页了");
+                    ToastUtil.show(this,"First page.");
                     return;
                 }
                 qryDept(mPage, "-");
@@ -148,7 +148,7 @@ public class DeptActivity extends BaseActivity implements View.OnClickListener,V
             case R.id.dept_next:
                 //下一页
                 if (isLastPage) {
-                    ToastUtil.show(this,"已经是最后一页了");
+                    ToastUtil.show(this,"Last page.");
                     return;
                 }
                 qryDept(mPage, "+");
@@ -161,7 +161,7 @@ public class DeptActivity extends BaseActivity implements View.OnClickListener,V
     }
 
     private void qryDept(int page, final String type) {
-        showProgressDialog("正在查询数据");
+        showProgressDialog("Querying data");
         if ("+".equals(type)) {
             page ++;
         } else if ("-".equals(type)) {
@@ -178,7 +178,7 @@ public class DeptActivity extends BaseActivity implements View.OnClickListener,V
                         dismissProgressDialog();
                         String msg = e.getMessage();
                         if (msg.startsWith("Failed"))  {
-                            msg = "无法连接服务器，请检查网络";
+                            msg = "Unable to connect to the server，Please check the network";
                         }
                         ToastUtil.show(DeptActivity.this, msg);
                     }
@@ -221,7 +221,7 @@ public class DeptActivity extends BaseActivity implements View.OnClickListener,V
                     @Override
                     public void run() {
                         dismissProgressDialog();
-                        ToastUtil.show(DeptActivity.this, "暂无数据显示");
+                        ToastUtil.show(DeptActivity.this, "No data show");
                     }
                 });
             }

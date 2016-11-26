@@ -65,7 +65,7 @@ public class RemoteActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.remote, null));
 
         mOffcieBtn = (Button) findViewById(R.id.remote_office);
@@ -129,7 +129,7 @@ public class RemoteActivity extends BaseActivity implements View.OnClickListener
             }
         });
 
-        showProgressDialog("正在查询数据..");
+        showProgressDialog("Querying data..");
         qryOffices(mPage, null);
     }
 
@@ -149,32 +149,32 @@ public class RemoteActivity extends BaseActivity implements View.OnClickListener
                 //科室
                 mDataType = "offices";
                 mPage = 1;
-                showProgressDialog("正在查询数据..");
+                showProgressDialog("Querying data..");
                 qryOffices(mPage,null);
                 break;
             case R.id.remote_hospital:
                 //医院
                 mDataType = "hospitals";
                 mPage = 1;
-                showProgressDialog("正在查询数据..");
+                showProgressDialog("Querying data..");
                 qryOffices(mPage,null);
                 break;
             case R.id.remote_up:
                 //上一页
                 if (mPage == 1) {
-                    ToastUtil.show(this,"已经是第一页了");
+                    ToastUtil.show(this,"First page.");
                     return;
                 }
-                showProgressDialog("正在查询数据..");
+                showProgressDialog("Querying data..");
                 qryOffices(mPage,"-");
                 break;
             case R.id.remote_next:
                 //下一页
                 if (isLastPage) {
-                    ToastUtil.show(this,"已经是最后一页了");
+                    ToastUtil.show(this,"Last page.");
                     return;
                 }
-                showProgressDialog("正在查询数据..");
+                showProgressDialog("Querying data..");
                 qryOffices(mPage,"+");
                 break;
             case R.id.remote_back:
@@ -202,7 +202,7 @@ public class RemoteActivity extends BaseActivity implements View.OnClickListener
                         dismissProgressDialog();
                         String msg = e.getMessage();
                         if (msg.startsWith("Failed"))  {
-                            msg = "无法连接服务器，请检查网络";
+                            msg = "Unable to connect to the server，Please check the network";
                         }
                         ToastUtil.show(RemoteActivity.this, msg);
                     }
@@ -253,7 +253,7 @@ public class RemoteActivity extends BaseActivity implements View.OnClickListener
                         @Override
                         public void run() {
                             dismissProgressDialog();
-                            ToastUtil.show(RemoteActivity.this, "暂无数据显示");
+                            ToastUtil.show(RemoteActivity.this, "No data show");
                         }
                     });
                 }

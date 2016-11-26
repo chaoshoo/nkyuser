@@ -35,12 +35,12 @@ public class Constant {
         try {
             JSONObject xueya = new JSONObject();
             xueya.put("inspect_code","C01");
-            xueya.put("inspect_name","血压");
+            xueya.put("inspect_name","blood pressure");
             NORM.add(xueya);
 
             JSONObject xuetang = new JSONObject();
             xuetang.put("inspect_code","C02");
-            xuetang.put("inspect_name", "血糖");
+            xuetang.put("inspect_name", "blood sugar");
             NORM.add(xuetang);
 
             JSONObject bmi = new JSONObject();
@@ -50,17 +50,17 @@ public class Constant {
 
             JSONObject tiwen = new JSONObject();
             tiwen.put("inspect_code","C04");
-            tiwen.put("inspect_name","体温");
+            tiwen.put("inspect_name","temperature");
             NORM.add(tiwen);
 
             JSONObject xueyang = new JSONObject();
             xueyang.put("inspect_code","C05");
-            xueyang.put("inspect_name","血氧");
+            xueyang.put("inspect_name","Oxygen");
             NORM.add(xueyang);
 
             JSONObject niao = new JSONObject();
             niao.put("inspect_code","C06");
-            niao.put("inspect_name","尿常规");
+            niao.put("inspect_name","Urine routine");
             NORM.add(niao);
         } catch (JSONException e) {
             e.printStackTrace();

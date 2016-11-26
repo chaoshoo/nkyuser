@@ -79,7 +79,7 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.order, null));
 
         mUpBtn = (Button) findViewById(R.id.order_up);
@@ -131,7 +131,7 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
                     showOrderOperationPop();
                     return;
                 }
-                ToastUtil.show(OrderActivity.this,"该订单不可操作");
+                ToastUtil.show(OrderActivity.this,"The order is not available");
             }
         });
         qryOrder(mPage, null);
@@ -152,7 +152,7 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
             case R.id.order_up:
                 //上一页
                 if (mPage == 1) {
-                    ToastUtil.show(this,"已经是第一页了");
+                    ToastUtil.show(this,"First page.");
                     return;
                 }
                 qryOrder(mPage, "-");
@@ -160,7 +160,7 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
             case R.id.order_next:
                 //下一页
                 if (isLastPage) {
-                    ToastUtil.show(this,"已经是最后一页了");
+                    ToastUtil.show(this,"Last page.");
                     return;
                 }
                 qryOrder(mPage, "+");
@@ -190,7 +190,7 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
     }
 
     private void qryOrder(int page, final String type) {
-        showProgressDialog("正在查询数据");
+        showProgressDialog("Querying data");
         if ("+".equals(type)) {
             page ++;
         } else if ("-".equals(type)) {
@@ -207,7 +207,7 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
                         dismissProgressDialog();
                         String msg = e.getMessage();
                         if (msg.startsWith("Failed"))  {
-                            msg = "无法连接服务器，请检查网络";
+                            msg = "Unable to connect to the server，Please check the network";
                         }
                         ToastUtil.show(OrderActivity.this, msg);
                     }
@@ -248,7 +248,7 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
                     @Override
                     public void run() {
                         dismissProgressDialog();
-                        ToastUtil.show(OrderActivity.this, "暂无数据显示");
+                        ToastUtil.show(OrderActivity.this, "No data show");
                     }
                 });
             }
@@ -279,20 +279,20 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
         }
 
         mYesBtn.setVisibility(View.VISIBLE);
-        mOrderIdTV.setText("订单编号：" + mOrder.getOrderid());
-        mOrderFeeTV.setText("挂号费用：" + mOrder.getOrderfee() + "元");
+        mOrderIdTV.setText("Order number：" + mOrder.getOrderid());
+        mOrderFeeTV.setText("Registration fee：" + mOrder.getOrderfee() + "element");
         String status = mOrder.getStatus();
         if ("1".equals(status)) {
-            status = "锁号成功";
-            mYesBtn.setText("确认订单");
+            status = "Locked success";
+            mYesBtn.setText("Confirm order");
         } else if ("2".equals(status)) {
-            status = "确认成功";
-            mYesBtn.setText("去支付");
+            status = "Confirmed";
+            mYesBtn.setText("To pay");
         } else if ("3".equals(status)) {
-            status = "支付成功";
+            status = "Payed";
             mYesBtn.setVisibility(View.GONE);
         }
-        mPayStatus.setText("支付状态：" + status);
+        mPayStatus.setText("Payment status：" + status);
         mOrderOperationPop.showAtLocation(mRecyclerViewTV,Gravity.CENTER,0,0);
     }
 
@@ -300,21 +300,21 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
     private void showConfirmHintDialog() {
         if (mConfirmHintDialog == null) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("确定确认该订单吗？");
-            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            builder.setTitle("Are you sure you confirm the order？");
+            builder.setPositiveButton("Confirmed", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     confirmOrder();
                 }
             });
-            builder.setNegativeButton("取消", null);
+            builder.setNegativeButton("cancel", null);
             mConfirmHintDialog = builder.create();
         }
         mConfirmHintDialog.show();
     }
 
     private void confirmOrder() {
-        showProgressDialog("正在确认订单");
+        showProgressDialog("Confirming order");
         mCallList.add(OkHttpHelper.get(OkHttpHelper.makeJsonParams("confirmorder",
                 new String[]{"orderid"},
                 new Object[]{mOrder.getOrderid()}), new Callback() {
@@ -323,7 +323,7 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
                 dismissProgressDialog();
                 String msg = e.getMessage();
                 if (msg.startsWith("Failed")) {
-                    msg = "无法连接服务器，请检查网络";
+                    msg = "Unable to connect to the server，Please check the network";
                 }
                 ToastUtil.show(OrderActivity.this, msg);
             }
@@ -342,9 +342,9 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
                         dismissProgressDialog();
                         if ("0".equals(ret)) {
                             mOrderOperationPop.dismiss();
-                            showConfirmMsg("确认成功：" + orderconfirmsms);
+                            showConfirmMsg("Confirmed：" + orderconfirmsms);
                         } else {
-                            ToastUtil.show(OrderActivity.this, "确认失败：" + msg);
+                            ToastUtil.show(OrderActivity.this, "Failed to confirm：" + msg);
                         }
                     }
                 });
@@ -356,8 +356,8 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
     private void showConfirmMsg(String msg) {
         if (mshowConfirmMsgDialog == null) {
             mshowConfirmMsgDialog = new AlertDialog.Builder(this);
-            mshowConfirmMsgDialog.setTitle("提示");
-            mshowConfirmMsgDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            mshowConfirmMsgDialog.setTitle("Prompt");
+            mshowConfirmMsgDialog.setPositiveButton("Confirmed", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     qryOrder(mPage, null);
@@ -405,14 +405,14 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
     private void showCancelHintDialog() {
         if (mCancelHintDialog == null) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("确定取消该订单吗？");
-            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            builder.setTitle("Are you sure cancel order？");
+            builder.setPositiveButton("Confirmed", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     cancelOrder();
                 }
             });
-            builder.setNegativeButton("取消", null);
+            builder.setNegativeButton("cancel", null);
             mCancelHintDialog = builder.create();
         }
         mCancelHintDialog.show();
@@ -421,10 +421,10 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
     private void cancelOrder() {
         String reason = mCancelReasonET.getText().toString().trim();
         if (TextUtils.isEmpty(reason)) {
-            ToastUtil.show(this,"请输入原因");
+            ToastUtil.show(this,"Please enter the reason");
             return;
         }
-        showProgressDialog("正在取消订单");
+        showProgressDialog("Cancelling the order");
         mCallList.add(OkHttpHelper.get(OkHttpHelper.makeJsonParams("cancelorder",
                 new String[]{"cancelreason","operator","orderid"},
                 new Object[]{reason,mVip.getCard_code(),mOrder.getOrderid()}), new Callback() {
@@ -433,7 +433,7 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
                 dismissProgressDialog();
                 String msg = e.getMessage();
                 if (msg.startsWith("Failed"))  {
-                    msg = "无法连接服务器，请检查网络";
+                    msg = "Unable to connect to the server，Please check the network";
                 }
                 ToastUtil.show(OrderActivity.this, msg);
             }
@@ -454,7 +454,7 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener,
                             ToastUtil.show(OrderActivity.this,msg);
                             qryOrder(mPage,null);
                         } else {
-                            ToastUtil.show(OrderActivity.this,"订单取消失败：" + msg);
+                            ToastUtil.show(OrderActivity.this,"Order cancellation failed：" + msg);
                         }
                     }
                 });

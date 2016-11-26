@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="成员"
+            android:text="member"
             android:textColor="@android:color/white"
             android:textSize="34sp" />
 
@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="点击会员可切换成员状态"
+            android:text="Click members to switch status"
             android:textColor="@android:color/white"
             android:textSize="28sp" />
 
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="当前成员："
+            android:text="Current member："
             android:textColor="@android:color/white"
             android:textSize="24sp" />
 
@@ -52,7 +52,7 @@
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:background="@drawable/white_btn"
-            android:text="返回"
+            android:text="Return"
             android:textColor="#0072b9"
             android:textSize="@dimen/btn_size"
             android:layout_gravity="center"

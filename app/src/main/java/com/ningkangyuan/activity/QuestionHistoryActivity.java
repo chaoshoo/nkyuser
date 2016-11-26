@@ -64,7 +64,7 @@ public class QuestionHistoryActivity extends BaseActivity implements View.OnClic
 
     @Override
     protected void init() {
-        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("检查卡号：" + mVip.getCard_code());
+        ((TextView) findViewById(R.id.universal_checkcard_num)).setText("Check card number：" + mVip.getCard_code());
         ((FrameLayout) findViewById(R.id.universal_content)).addView(LayoutInflater.from(this).inflate(R.layout.question_history, null));
 
         mUpBtn = (Button) findViewById(R.id.question_history_up);
@@ -133,19 +133,19 @@ public class QuestionHistoryActivity extends BaseActivity implements View.OnClic
             case R.id.question_history_up:
                 //上一页
                 if (mPage == 1) {
-                    ToastUtil.show(this,"已经是第一页了");
+                    ToastUtil.show(this,"First page.");
                     return;
                 }
-                showProgressDialog("正在查询数据..");
+                showProgressDialog("Querying data..");
                 qryQuestion(mPage, "-");
                 break;
             case R.id.question_history_next:
                 //下一页
                 if (mIsLastPage) {
-                    ToastUtil.show(this,"已经是最后一页了");
+                    ToastUtil.show(this,"Last page.");
                     return;
                 }
-                showProgressDialog("正在查询数据..");
+                showProgressDialog("Querying data..");
                 qryQuestion(mPage, "+");
                 break;
             case R.id.question_history_back:
@@ -162,7 +162,7 @@ public class QuestionHistoryActivity extends BaseActivity implements View.OnClic
         if ("-".equals(type)) {
             page --;
         }
-        showProgressDialog("正在加载数据..");
+        showProgressDialog("Loading data..");
         mCallList.add(OkHttpHelper.get(
                 OkHttpHelper.makeJsonParams("questionlist",
                         new String[]{"vip_code", "doctor_code", "pageIndex", "pageSize"},
@@ -210,7 +210,7 @@ public class QuestionHistoryActivity extends BaseActivity implements View.OnClic
                                 @Override
                                 public void run() {
                                     dismissProgressDialog();
-                                    ToastUtil.show(QuestionHistoryActivity.this, "暂无信息数据");
+                                    ToastUtil.show(QuestionHistoryActivity.this, "No information");
                                 }
                             });
                         }

@@ -11,7 +11,7 @@
         android:layout_height="60dp"
         android:background="@drawable/item"
         android:gravity="center"
-        android:text="返回"
+        android:text="Return"
         android:textSize="24sp"
         android:textColor="@android:color/white"
         android:nextFocusDown="@+id/setting_current_version"/>
@@ -23,7 +23,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/item"
         android:gravity="center"
-        android:text="检测更新"
+        android:text="Detection update"
         android:textSize="24sp"
         android:textColor="@android:color/white"
         android:nextFocusDown="@+id/setting_current_version"/>
@@ -35,7 +35,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/item"
         android:gravity="center"
-        android:text="当前版本号"
+        android:text="Current version"
         android:textSize="24sp"
         android:textColor="@android:color/white"
         android:nextFocusDown="@+id/setting_exit"
@@ -48,7 +48,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/item"
         android:gravity="center"
-        android:text="退出当前账号"
+        android:text="Logout current account"
         android:textSize="24sp"
         android:textColor="@android:color/white"
         android:nextFocusUp="@+id/setting_current_version"/>

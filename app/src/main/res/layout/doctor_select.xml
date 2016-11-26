@@ -30,7 +30,7 @@
             android:textSize="20sp"
             android:textColor="@android:color/white"
             android:background="@drawable/blue_btn"
-            android:text="远程咨询诊断"
+            android:text="Remote consultation and diagnosis"
             android:nextFocusUp="@+id/doctor_select_close"
             android:nextFocusDown="@+id/doctor_select_question"/>
 
@@ -42,7 +42,7 @@
             android:textSize="20sp"
             android:textColor="@android:color/white"
             android:background="@drawable/cyan_btn"
-            android:text="留言"
+            android:text="Leave a message"
             android:nextFocusUp="@+id/doctor_select_remote"/>
     </LinearLayout>
 

@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textSize="22sp"
-        android:text="请选择此次血糖的测量类型"/>
+        android:text="Please select the type of blood glucose measurement"/>
 
     <Button
         android:id="@+id/pop_xuetang_glu0"
@@ -24,7 +24,7 @@
         android:background="@drawable/cyan_btn"
         android:textColor="@android:color/white"
         android:textSize="20sp"
-        android:text="随机血糖"
+        android:text="Random blood glucose"
         android:nextFocusDown="@+id/pop_xuetang_glu1"/>
 
     <Button
@@ -35,7 +35,7 @@
         android:background="@drawable/cyan_btn"
         android:textColor="@android:color/white"
         android:textSize="20sp"
-        android:text="餐前血糖"
+        android:text="Pre-meal blood glucose"
         android:nextFocusUp="@+id/pop_xuetang_glu0"
         android:nextFocusDown="@+id/pop_xuetang_glu2"/>
 
@@ -47,7 +47,7 @@
         android:background="@drawable/cyan_btn"
         android:textColor="@android:color/white"
         android:textSize="20sp"
-        android:text="餐后血糖"
+        android:text="Postprandial blood glucose"
         android:nextFocusUp="@+id/pop_xuetang_glu1"/>
 
 

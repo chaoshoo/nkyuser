@@ -18,7 +18,7 @@
             android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:gravity="center_horizontal"
-            android:text="标题"
+            android:text="Title"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
 
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:background="@drawable/picker_back"
-            android:text="取消"
+            android:text="cancel"
             android:focusable="false"
             android:textColor="@android:color/white"
 
@@ -43,7 +43,7 @@
             android:layout_alignParentRight="true"
             android:layout_gravity="right"
             android:background="@drawable/picker_finish"
-            android:text="完成"
+            android:text="complete"
             android:textColor="@android:color/white" />
     </RelativeLayout>
 
