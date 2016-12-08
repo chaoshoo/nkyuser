@@ -30,7 +30,7 @@ public class OkHttpHelper {
     //外网
 //    private static final String URL = "http://114.55.228.245:84/nkyapi/mobile/interface.do?content=";
 
-    private static final String URL = "http://api.nbrobo.com/mobile/interface.do?content=";
+    private static final String URL = "http://api.大华援助.cn/mobile/interface.do?content=";
     /**
      * get请求
      * @param params

@@ -81,7 +81,7 @@ public class GuideActivity extends BaseActivity {
                 dismissProgressDialog();
             }
         });
-        String url = "http://api.nbrobo.com/user-guide.html";
+        String url = "http://api.大华援助.cn/user-guide.html";
         mWebView.loadUrl(url);
 
     }
